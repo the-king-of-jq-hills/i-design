@@ -205,8 +205,29 @@ li.customize-control {
 	color: #FFF!important;	
 }
 
+
 #customize-control-logo-trans {
 	background-image: url("../images/logo-bg.png");
 	background-position: center;
 	background-size: cover;
+}
+
+
+#accordion-section-woocomm > h3.accordion-section-title  {
+	background-color: #96588a;
+	color: #FFF;
+}
+
+#accordion-section-woocomm > h3.accordion-section-title:hover,
+#accordion-section-woocomm > h3.accordion-section-title:focus {
+	background-color: #333!important;
+	color: #FFF!important;	
+}
+
+#accordion-section-woocomm:hover > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-woocomm > h3.accordion-section-title:after {
+	color: #FFF!important;	
 }

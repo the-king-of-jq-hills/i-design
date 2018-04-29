@@ -41,7 +41,7 @@ function idesign_ibanner_slider () {
 	$title_font_size = esc_attr(get_theme_mod('title_font_size', 48));
 	$title_font_weight = esc_attr(get_theme_mod('title_font_weight', 700));
 
-	$nxs_class = esc_attr(get_theme_mod('itrans_style', 'nxs-default'));
+	$nxs_class = esc_attr(get_theme_mod('itrans_style', 'nxs-design18'));
 	
 	$upload_dir = wp_upload_dir();
 	$upload_base_dir = $upload_dir['basedir'];
@@ -55,8 +55,8 @@ function idesign_ibanner_slider () {
 		
 			$strret = '';
 			
-			$slide_title = esc_attr(get_theme_mod('itrans_slide'.$slideno.'_title', __( 'WELCOME TO I-DESIGN', 'i-design' ) ));
-			$slide_desc = esc_attr(get_theme_mod('itrans_slide'.$slideno.'_desc', __( 'i-design is a beautiful and flexible theme with several premium features including fullscreen slider, portfolio, testimonial, team members, etc.', 'i-design' )));
+			$slide_title = esc_attr(get_theme_mod('itrans_slide'.$slideno.'_title', __( '<span style="color: #e57e26;">DRAG & DROP</span> PAGE BUILDER', 'i-design' ) ));
+			$slide_desc = esc_attr(get_theme_mod('itrans_slide'.$slideno.'_desc', __( 'WooCommerce, Elementor, SIteOrigin Page Builder Support And Free Layouts', 'i-design' )));
 			$slide_linktext = esc_attr(get_theme_mod('itrans_slide'.$slideno.'_linktext', __( 'Know More', 'i-design' )));
 			$slide_linkurl = esc_url(get_theme_mod('itrans_slide'.$slideno.'_linkurl', esc_url( 'http://www.templatesnext.org/i-design/', 'i-design' )));
 			$slide_image = esc_url(get_theme_mod('itrans_slide'.$slideno.'_image', get_template_directory_uri() . '/images/slide'.$slideno.'.jpg'));

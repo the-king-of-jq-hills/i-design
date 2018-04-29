@@ -335,7 +335,7 @@ jQuery(document).ready(function($) {
 			$('html,body').animate({scrollTop:($(this.hash).offset().top)-100}, 500);
 		});
 	}
-	
+	/*
 	$('a[href*="#"]:not([href="#"])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -347,7 +347,8 @@ jQuery(document).ready(function($) {
 				return false;
 		  	}
 		}
-	});		
+	});
+	*/		
 		
 })(jQuery);
 /**/
@@ -431,6 +432,16 @@ jQuery(document).ready(function($) {
 		{					
 			$( '.nx-preloader .nx-ispload' ).css( "display", "none" );
 		}
-	});	
+	});
+	
+	if( $('.elementor-editor-active').length > 0 ) {
+		$( '.nx-ispload' ).css( "display", "none" );
+	}
+	
+	if( $('.woocommerce').length > 0 ) {
+		$('.woocommerce ul.products li.product a img').each(function() {
+			$( this ).wrap( "<span class='nx-prod-vinette'></span>" );
+		});
+	}		
 		
 });

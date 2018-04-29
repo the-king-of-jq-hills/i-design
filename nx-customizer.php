@@ -210,6 +210,12 @@ function idesign_add_panels_and_sections( $wp_customize ) {
         'priority' => 180,
     ));						
 	
+	// WooCommerce Settings
+    $wp_customize->add_section('woocomm', array(
+        'title'    => __('WooCommerce Theme Options', 'i-design'),
+        'description' => '',
+        'priority' => 191,
+    ));		
 }
 
 
@@ -231,7 +237,7 @@ function idesign_custom_setting( $controls ) {
 		'label'       => __( 'Turn ON Page Preloader', 'i-design' ),
 		'description' => __( 'Turn ON/OFF loding animation before page load', 'i-design' ),
 		'section'     => 'basic',
-		'default'     => 0,		
+		'default'     => 1,		
 		'priority'    => 3,
 	);		
 	
@@ -499,7 +505,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_slide1_title',
         'label'    => __( 'Slide1 Title', 'i-design' ),
         'section'  => 'slide1',
-        'default'  => __( 'WELCOME TO I-DESIGN', 'i-design' ),
+        'default'  => __( '<span style="color: #e57e26;">DRAG & DROP</span> PAGE BUILDER', 'i-design' ),
 		'description' => __( 'Accepts span tag with style or class attribute.', 'i-design' ),
         'priority' => 1,
     );
@@ -508,7 +514,7 @@ function idesign_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide1_desc',
 		'label'       => __( 'Slide1 Description', 'i-design' ),
 		'section'     => 'slide1',
-		'default'     => __( 'i-design is a beautiful and flexible theme with several premium features including fullscreen slider, portfolio, testimonial, team members, etc.', 'i-design' ),
+		'default'     => __( 'WooCommerce, Elementor, SIteOrigin Page Builder Support And Free Layouts', 'i-design' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -936,22 +942,37 @@ function idesign_custom_setting( $controls ) {
 		),	
 	);		
 	
+	
+	/* WooCommerce Settings */
 	$controls[] = array(
-		'type'        => 'custom',
-		'settings'    => 'custom_demo',
-		'section'     => 'nxpromo',
-		'default'	  => '<div class="promo-box">
-        <div class="promo-2">
-        	<div class="promo-wrap">
-            	<a href="http://templatesnext.org/idesign/" target="_blank">' . __('i-design Demo', 'i-design') . '</a>
-                <a href="https://www.facebook.com/templatesnext" target="_blank">' . __('Facebook', 'i-design') . '</a> 
-                <a href="http://templatesnext.org/ispirit/landing/forums/" target="_blank">' . __('Support', 'i-design') . '</a>                                 
-                <a href="https://wordpress.org/support/view/theme-reviews/i-design#postform" target="_blank">' . __('Rate i-design', 'i-design') . '</a>                
-            </div>
-        </div>
-		</div>',
-		'priority' => 10,
+		'type'        => 'switch',
+		'settings'     => 'show_login',
+		'label'       => __( 'Hide/Show Topnav Login', 'i-design' ),
+		'description' => __( 'Turn ON or OFF user login menu item on top nav', 'i-design' ),
+		'section'     => 'woocomm',
+		'default'  	  => 0,		
+		'priority'    => 1,
 	);
+	
+	$controls[] = array(
+		'type'        => 'switch',
+		'settings'     => 'show_cart',
+		'label'       => __( 'Show/Hide Topnav Cart', 'i-design' ),
+		'description' => __( 'Turn ON or OFF cart from top nav', 'i-design' ),
+		'section'     => 'woocomm',
+		'default'     => 0,		
+		'priority'    => 1,
+	);
+	
+	$controls[] = array(
+		'type'        => 'switch',
+		'settings'     => 'product_search',
+		'label'       => __( 'Turn On/OFF Product Search', 'i-design' ),
+		'description' => __( 'Turn ON/OFF product only search.', 'i-design' ),
+		'section'     => 'woocomm',
+		'default'  	  => 0,		
+		'priority'    => 1,
+	);	
 	
 	// promos
 	$controls[] = array(

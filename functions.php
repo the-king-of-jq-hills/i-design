@@ -526,7 +526,7 @@ function idesign_body_class( $classes ) {
 		$classes[] = 'tx-nopad';
 			
 	// Add PreLoader Class
-	if( get_theme_mod('pre_loader', 0) == 1 )
+	if( get_theme_mod('pre_loader', 1) == 1 )
 		$classes[] = 'nx-preloader';
 
 	return $classes;
@@ -622,6 +622,8 @@ if ( function_exists( 'rwmb_meta' ) ) {
 include get_template_directory() . '/inc/custom_functions.php';
 
 include get_template_directory() . '/inc/nx-custom-style.php';
+
+include get_template_directory() . '/inc/woo-functions.php';
 
 /*-----------------------------------------------------------------------------------*/
 /*	changing default Excerpt length 

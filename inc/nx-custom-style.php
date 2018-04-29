@@ -172,6 +172,12 @@
 		
 			echo '.vslider_button, .vslider_button:visited { background-color:'.$primary_color.'!important; }';
 			
+			echo '.header-iconwrap .header-icons.woocart > a .cart-counts, .woocommerce ul.products li.product .button {background-color:'.$primary_color.';}';
+			
+			echo '.header-icons.woocart .cartdrop.widget_shopping_cart.nx-animate { border-top-color:'.$primary_color.';}';
+			
+			echo '.woocommerce ul.products li.product .onsale, .woocommerce span.onsale { background-color: '.$primary_color.'; color: #FFF; }';			
+			
 			if ($custom_css) {
 			echo "\n".'/* =============== user styling =============== */'."\n";
 			echo $custom_css;
