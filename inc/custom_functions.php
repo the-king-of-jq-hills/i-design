@@ -37,8 +37,9 @@ function idesign_ibanner_slider () {
 	$template_dir = get_template_directory_uri();
 	$banner_text = get_theme_mod('banner_text', '');
 	$slider_height = esc_attr(get_theme_mod('slider_height', 100));
+	$slider_reduct = esc_attr(get_theme_mod('slider_reduct', 0));	
 	
-	$title_font_size = esc_attr(get_theme_mod('title_font_size', 48));
+	$title_font_size = esc_attr(get_theme_mod('title_font_size', 56));
 	$title_font_weight = esc_attr(get_theme_mod('title_font_weight', 700));
 
 	$nxs_class = esc_attr(get_theme_mod('itrans_style', 'nxs-design18'));
@@ -127,7 +128,7 @@ function idesign_ibanner_slider () {
 	
 	if( count( $arrslidestxt) > 0 ){
 		echo '<div class="ibanner ' . $overlayclass . ' ' . $ubarclass . ' '. $nxs_class . '">';
-		echo '	<div id="da-slider" class="da-slider" role="banner" data-slider-speed="'.$sliderscpeed.'" data-slider-parallax="'.$itrans_sliderparallax.'" data-edit-slides="'.$shortcut_text.'" data-slider-height="'.$slider_height.'">';
+		echo '	<div id="da-slider" class="da-slider" role="banner" data-slider-speed="'.$sliderscpeed.'" data-slider-parallax="'.$itrans_sliderparallax.'" data-edit-slides="'.$shortcut_text.'" data-slider-height="'.$slider_height.'" data-slider-reduct="'.$slider_reduct.'">';
 			
 		foreach ( $arrslidestxt as $slidetxt ) :
 			echo '<div class="nx-slider">';	

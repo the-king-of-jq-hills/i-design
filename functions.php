@@ -486,10 +486,12 @@ function idesign_body_class( $classes ) {
 	
 	$idesign_page_nopad = 0;
 	$idesign_page_class = '';
+	$idesign_no_ubar = 0;
 	
 	if ( function_exists( 'rwmb_meta' ) ) {
 		$idesign_page_nopad = rwmb_meta('idesign_page_nopad');
 		$idesign_page_class = rwmb_meta('idesign_page_class');
+		$idesign_no_ubar = rwmb_meta('idesign_no_ubar');		
 	}
 		
 	if ( ! is_multi_author() )
@@ -528,6 +530,14 @@ function idesign_body_class( $classes ) {
 	// Add PreLoader Class
 	if( get_theme_mod('pre_loader', 1) == 1 )
 		$classes[] = 'nx-preloader';
+		
+	if ( is_page_template( 'page_full-width.php' ) ) {
+		$classes[] = 'nx-full-width';
+	}	
+	
+	if ( $idesign_no_ubar == 1 ) {
+		$classes[] = 'no-ubar';
+	}			
 
 	return $classes;
 }

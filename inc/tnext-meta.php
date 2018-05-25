@@ -55,7 +55,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 		'fields' => array(
 			// Hide Title
 			array(
-				'name' => __( 'Hide Title', 'i-design' ),
+				'name' => __( 'Hide Titlebar', 'i-design' ),
 				'id'   => "{$prefix}hidetitle",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
@@ -88,7 +88,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 				'id'    => "{$prefix}other_slider",
 				// Field description (optional)
 				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. Only works with TemplatesNext Themes ', 'i-design' ),
-				'type'  => 'text',
+				'type'  => 'textarea',
 				// Default value (optional)
 				'std'   => '',
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
@@ -192,7 +192,26 @@ function idesign_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Remove the spaces/padding from top and bottom of the page/post', 'i-design'),
-			),							
+			),
+			// Hide page header
+			array(
+				'name' => __( 'Hide Page Header', 'i-design' ),
+				'id'   => "{$prefix}no_page_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('In case you are building the page without the top navigation and logo', 'i-design'),
+			),
+			
+			// Hide page header
+			array(
+				'name' => __( 'Hide Top Utilitybar', 'i-design' ),
+				'id'   => "{$prefix}no_ubar",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide top bar with email and social links', 'i-design'),
+			),											
 
 			// Custom page primary color			
 			array(
@@ -201,7 +220,32 @@ function idesign_register_meta_boxes( $meta_boxes )
 				'type'  => 'color',
 				'std'   => '',
 				'desc' => __('Choose a custom primary color for this page', 'i-design'),
-			),	
+			),
+			/*
+			// Custom page primary color			
+			array(
+				'name'  => __( 'Content Link Color', 'i-design' ),
+				'id'    => "{$prefix}link_color",
+				'type'  => 'color',
+				'std'   => '',
+				'desc' => __('Choose a custom link color for this page', 'i-design'),
+			),			
+			*/
+			/* requires meta-box update  */
+			/*
+			// Custom page logo normal			
+			array(
+				'name'  => __( 'Custom Page Logo Normal', 'i-design' ),
+				'id'    => "{$prefix}page_logo_normal",
+				'type'  => 'single_image',
+			),
+			// Custom page logo transparent
+			array(
+				'name'  => __( 'Custom Page Logo Reverse', 'i-design' ),
+				'id'    => "{$prefix}page_logo_trans",
+				'type'  => 'single_image',
+			),
+			*/
 						
 			// additional page class			
 			array(

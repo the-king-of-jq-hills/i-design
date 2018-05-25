@@ -14,8 +14,8 @@ $top_phone = '';
 $top_email = '';
 $video_id = '';
 
-$top_phone = esc_attr(get_theme_mod('top_phone', ''));
-$top_email = sanitize_email(get_theme_mod('top_email', ''));
+$top_phone = esc_attr(get_theme_mod('top_phone', '032216554'));
+$top_email = sanitize_email(get_theme_mod('top_email', 'example@example.com'));
 $show_search = get_theme_mod('show_search', 1);
 
 $idesign_logo_trans = get_theme_mod( 'logo-trans', '' );
@@ -29,6 +29,24 @@ if(has_header_video())
 }
 
 global $post; 
+
+$no_page_header = 0;
+if ( function_exists( 'rwmb_meta' ) ) { 
+	$no_page_header = rwmb_meta('idesign_no_page_header');
+	
+	/* Requires Meta Box Update
+	if(rwmb_meta( 'idesign_page_logo_normal' ))
+	{
+		$custom_logo_normal = rwmb_meta( 'idesign_page_logo_normal', '' );
+		$custom_logo_image = $custom_logo_normal['full_url'];
+	}
+	if(rwmb_meta( 'idesign_page_logo_trans' ))
+	{
+		$custom_logo_reverse = rwmb_meta( 'idesign_page_logo_trans', '' );
+		$idesign_logo_trans = $custom_logo_reverse['full_url'];
+	}
+	*/	
+}
 
 ?>
 
@@ -67,20 +85,21 @@ global $post;
                 <?php if ( !empty($top_phone) ) : ?>
                 <div class="topphone tx-topphone">
                     <i class="topbarico genericon genericon-phone"></i>
-                    <?php esc_html_e('Call us : ','i-design'); ?> <?php echo $top_phone; ?>
+                    <?php echo $top_phone; ?>
                 </div>
                 <?php endif; ?>
                 
                 <?php if ( !empty($top_email) ) : ?>
                 <div class="topphone top_email">
                     <i class="topbarico genericon genericon-mail"></i>
-                    <?php esc_html_e('Mail us : ','i-design'); ?> <?php echo $top_email; ?>
+                    <?php echo $top_email; ?>
                 </div>
                 <?php endif; ?>                
             </div> 
         </div>
         <?php endif; ?>
         
+        <?php if ( $no_page_header == 0 ) : ?>
         <div class="headerwrap">
             <header id="masthead" class="site-header" role="banner">
          		<div class="headerinnerwrap">
@@ -158,6 +177,7 @@ global $post;
                 </div>
             </header><!-- #masthead -->
         </div>
+        <?php endif; ?>
         
         <!-- #Banner -->
         <?php

@@ -46,7 +46,15 @@ $tx_plugins = array (
 			'pluginfile' => 'one-click-demo-import.php',	
     ),
 	array(
-            'name' => __( 'SiteOrigin PageBuilder (<span class="nx-red">Recommended</span>)', 'i-design' ),
+            'name' => __( 'Elementor Page Builder (<span class="nx-red">Optional</span>)', 'i-design' ),
+            'desc' => __( 'Drag & Drop live page builder', 'i-design' ),
+			'pluginurl' => esc_url( 'https://wordpress.org/plugins/elementor/' ),
+			'title' => 'Elementor',			
+			'slug' => 'elementor',
+			'pluginfile' => 'elementor.php',	
+    ),	
+	array(
+            'name' => __( 'SiteOrigin PageBuilder (<span class="nx-red">Optional</span>)', 'i-design' ),
             'desc' => __( 'This drag and drop page builder plugin makes it easy to build responsive grid-based page content. Our themes supports and extends SiteOrigin PageBuilder functionalities.', 'i-design' ),
 			'pluginurl' => esc_url( 'https://wordpress.org/plugins/siteorigin-panels/' ),
 			'tutorial' => esc_url( 'https://siteorigin.com/page-builder/documentation/' ),

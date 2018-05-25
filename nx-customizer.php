@@ -441,7 +441,7 @@ function idesign_custom_setting( $controls ) {
 		'settings'    => 'itrans_style',
 		'label'       => __( 'Slider Style', 'i-design' ),
 		'section'     => 'slidersettings',
-		'default'     => 'nxs-default',
+		'default'     => 'nxs-design18',
 		'priority'    => 4,
 		'choices'     => array(
 			'nxs-default'   => esc_attr__( 'Default', 'i-design' ),
@@ -474,10 +474,23 @@ function idesign_custom_setting( $controls ) {
 	
 	$controls[] = array(
 		'type'        => 'slider',
+		'settings'    => 'slider_reduct',
+		'label'       => __( 'Slider Height Reduction in PX', 'i-design' ),
+		'section'     => 'slidersettings',
+		'default'     => 0,
+		'choices'     => array(
+			'min'  => '0',
+			'max'  => '400',
+			'step' => '1',
+		),
+	);	
+	
+	$controls[] = array(
+		'type'        => 'slider',
 		'settings'    => 'title_font_size',
 		'label'       => __( 'Slide Title Font Size in px', 'i-design' ),
 		'section'     => 'slidersettings',
-		'default'     => 48,
+		'default'     => 56,
 		'choices'     => array(
 			'min'  => '12',
 			'max'  => '100',

@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-design/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-design is a beautiful and flexible theme with several premium features including fullscreen slider, portfolio, testimonial, team members, etc. This highly customizable theme is ideal for startup business websites, portfolios, personal websites or blogging. Highly responsive nature of i-design makes it suitable for large desktop screens to small mobile screens. Some of the features are unlimited color, boxed/wide layout, custom background, custom css styling, social links, multiple blog layout, etc. i-design comes with the plugin “templatesnext toolkit” giving you extra flexibility and functionality which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc. Unlike other themes i-design does not use theme settings to store content and you can switch theme without losing content. i-design is WooCommerce ready.
-Version: 1.1.8
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -6100,4 +6100,52 @@ nav.navigation .nav-links a:visited {
 	background-color: #373737;
 	color: #FFFFFF;
 	margin-right: 6px;
+}
+
+.woocommerce ul.products .owl-wrapper li.product .onsale {
+	right: 16px;
+}
+.woocommerce ul.products .owl-wrapper li.product button.tm-woocompare-button, 
+.woocommerce ul.products .owl-wrapper li.product .woocommerce button.tm-woocompare-button,
+.woocommerce ul.products .owl-wrapper li.product button.tm-woowishlist-button, 
+.woocommerce ul.products .owl-wrapper li.product .woocommerce button.tm-woowishlist-button {
+	right: 22px;
+}
+
+.product-category.product mark {
+	display: none;
+}
+
+.tx-prod-carousel .owl-carousel .owl-controls .owl-buttons .owl-next {
+	border-radius: 0px;
+}
+
+.tx-prod-carousel .owl-carousel .owl-controls .owl-buttons .owl-prev {
+	border-radius: 0px;	
+}
+
+/* full width template */
+.nx-full-width .site .site-main {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	max-width: 100%;
+}
+
+.nx-full-width .site .site-main .content-area {
+	margin: 0px;
+	padding: 0px;
+}
+
+.nx-full-width .site .site-main .content-area .entry-header {
+	display: none;
+}
+
+.no-ubar .utilitybar {
+	display: none;
+}
+
+.entry-content a.elementor-button,
+.entry-content a.elementor-button:visited {
+	color: #ffffff;
 }
