@@ -487,11 +487,17 @@ function idesign_body_class( $classes ) {
 	$idesign_page_nopad = 0;
 	$idesign_page_class = '';
 	$idesign_no_ubar = 0;
+	$show_trans_header = 0;
+	$hide_title = 0;
+	$header_type = '';
 	
 	if ( function_exists( 'rwmb_meta' ) ) {
 		$idesign_page_nopad = rwmb_meta('idesign_page_nopad');
 		$idesign_page_class = rwmb_meta('idesign_page_class');
-		$idesign_no_ubar = rwmb_meta('idesign_no_ubar');		
+		$idesign_no_ubar = rwmb_meta('idesign_no_ubar');
+		$show_trans_header = rwmb_meta('idesign_trans_header');		
+		//$hide_title = rwmb_meta('idesign_hidetitle');
+		$header_type = rwmb_meta('iamaze_header_type');			
 	}
 		
 	if ( ! is_multi_author() )
@@ -537,7 +543,21 @@ function idesign_body_class( $classes ) {
 	
 	if ( $idesign_no_ubar == 1 ) {
 		$classes[] = 'no-ubar';
-	}			
+	}
+	
+	if ( $hide_title == 1){
+		$classes[] = 'nx-hide-tite';
+	}
+	
+	if( $show_trans_header == 1 )
+	{
+		$classes[] = 'nx-trans-header';
+	}
+	
+	if( $header_type == '2' )
+	{
+		$classes[] = 'nx-vi-header';
+	}	
 
 	return $classes;
 }

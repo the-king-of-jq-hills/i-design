@@ -205,13 +205,11 @@ li.customize-control {
 	color: #FFF!important;	
 }
 
-
 #customize-control-logo-trans {
 	background-image: url("../images/logo-bg.png");
 	background-position: center;
 	background-size: cover;
 }
-
 
 #accordion-section-woocomm > h3.accordion-section-title  {
 	background-color: #96588a;

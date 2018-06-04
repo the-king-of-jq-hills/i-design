@@ -29,7 +29,6 @@ if(has_header_video())
 }
 
 global $post; 
-
 $no_page_header = 0;
 if ( function_exists( 'rwmb_meta' ) ) { 
 	$no_page_header = rwmb_meta('idesign_no_page_header');
@@ -182,15 +181,24 @@ if ( function_exists( 'rwmb_meta' ) ) {
         <!-- #Banner -->
         <?php
 		
-		$hide_title = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = "";
+		$hide_title = $header_type = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = "";
 		if ( function_exists( 'rwmb_meta' ) ) {
-			$hide_title = rwmb_meta('idesign_hidetitle');
+			$hide_title = rwmb_meta('iamaze_hidetitle');
+			$header_type = rwmb_meta('idesign_header_type');
 			$show_slider = rwmb_meta('idesign_show_slider');
 			$other_slider = rwmb_meta('idesign_other_slider');
 			$custom_title = rwmb_meta('idesign_customtitle');
 			$hide_breadcrumb = rwmb_meta('idesign_hide_breadcrumb');
 		}
 		
+		if( $hide_title == 1 ){
+			$header_type = 0;
+		}
+		
+		if( $hide_title == 1 ){
+			$header_type = 3;
+		}		
+
 		$hide_front_slider = get_theme_mod('slider_stat', 1);
 		$other_front_slider = get_theme_mod('blogslide_scode', '');
 		$itrans_slogan = esc_attr(get_theme_mod('banner_text', get_bloginfo( 'description' )));
@@ -207,13 +215,13 @@ if ( function_exists( 'rwmb_meta' ) ) {
         </div>
 		
 		<?php	
-		elseif ( ( is_home() && !is_paged() ) || $show_slider || ( is_front_page() && !$show_slider ) ) : 
+		elseif ( ( is_home() && !is_paged() ) || $header_type == '2' || $header_type == '3' ) : 
 		?>
             <?php if ( !empty($other_front_slider) && is_home() ) : ?>
             <div id="ibanner">
             	<?php echo do_shortcode( htmlspecialchars_decode($other_front_slider) ) ?>
             </div>    
-        	<?php elseif ( $hide_front_slider != 0 || $show_slider ) : ?>
+        	<?php elseif ( ( is_home() && $hide_front_slider != 0 ) || $header_type == '3' ) : ?>
             <div id="ibanner">
             	<?php idesign_ibanner_slider(); ?>
             </div>
@@ -248,7 +256,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
         	<?php endif; ?>            
             
         <?php 
-		elseif(!$hide_title) : 
+		elseif( $header_type != '0' ) : 
 		?>
         <div class="iheader" style="">
         	<div class="titlebar">
@@ -298,4 +306,3 @@ if ( function_exists( 'rwmb_meta' ) ) {
         
 		<?php endif; ?>
 		<div id="main" class="site-main">
-

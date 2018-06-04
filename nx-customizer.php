@@ -722,9 +722,10 @@ function idesign_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'slider',
 		'settings'    => 'blog_header_height',
-		'label'       => __( 'Image/Vedio Header Height (in %)', 'i-design' ),
-		'section'     => 'blogpage',
+		'label'       => __( 'Image/Video Header Height (in %)', 'i-design' ),
+		'section'     => 'header_image',
 		'default'     => 100,
+        'priority' 	  => 20,		
 		'choices'     => array(
 			'min'  => '0',
 			'max'  => '100',

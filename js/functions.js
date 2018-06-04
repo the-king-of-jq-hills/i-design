@@ -310,9 +310,10 @@ jQuery(document).ready(function($) {
 		}
 	}
 	
-	if( $('.elementor-page').length > 0 )
+	if( $('.nx-trans-header').length > 0 )
 	{
 		$('body').addClass('nx-fullscreen');
+		$(".iheader").css("display", "none");
 	}
 	
 	if($(".home").length > 0)

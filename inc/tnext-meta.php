@@ -54,21 +54,34 @@ function idesign_register_meta_boxes( $meta_boxes )
 		// List of meta fields
 		'fields' => array(
 			// Hide Title
+			/*
 			array(
-				'name' => __( 'Hide Titlebar', 'i-design' ),
+				'name' => __( 'Titlebar/Image Header Type', 'i-amaze' ),
 				'id'   => "{$prefix}hidetitle",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'hide-ttl',
 			),
+			*/
 			array(
-				'name' => __( 'Show Default i-design Slider', 'i-design' ),
-				'id'   => "{$prefix}show_slider",
-				'desc'  => __( 'Add/edit slider in menu "Appearance" > "Customize" > "Slider"', 'i-design' ),				
-				'type' => 'checkbox',
-				'std'  => 0,
-				'class' => 'show-slider',
+				'name'            => __( 'Titlebar/Image Header Type', 'i-design' ),
+				'id'              => "{$prefix}header_type",
+				'type'            => 'select',
+				'std'  			  => '1',
+				'options'         => array(
+					'1'     => __( 'Normal Page Title Bar', 'i-design' ),
+					'2'    	=> __( 'Default Image/Video Header', 'i-design' ),
+					'3' 	=> __( 'I-Design Theme Slider', 'i-design' ),
+					'0' 	=> __( 'None', 'i-design' ),
+				),
+				// Allow to select multiple value?
+				'multiple'        => false,
+				// Placeholder text
+				'placeholder'     => 'Select Header Type',
+				// Display "Select All / None" button?
+				'select_all_none' => true,
+				'desc'  => __( 'If 3rd party shortcode use, this setting will be overridden.', 'i-design' )
 			),
 			
 			// hide breadcrum
@@ -195,6 +208,15 @@ function idesign_register_meta_boxes( $meta_boxes )
 			),
 			// Hide page header
 			array(
+				'name' => __( 'Show Transparent Header', 'i-design' ),
+				'id'   => "{$prefix}trans_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Show transparent header on pages/posts. This will hide the page/post titlebar as well', 'i-design'),
+			),			
+			// Hide page header
+			array(
 				'name' => __( 'Hide Page Header', 'i-design' ),
 				'id'   => "{$prefix}no_page_header",
 				'type' => 'checkbox',
@@ -211,7 +233,16 @@ function idesign_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Hide top bar with email and social links', 'i-design'),
-			),											
+			),
+			// Hide page header
+			array(
+				'name' => __( 'Hide Footer Widget Area', 'i-design' ),
+				'id'   => "{$prefix}no_footer",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide bottom footer widget area', 'i-design'),
+			),														
 
 			// Custom page primary color			
 			array(

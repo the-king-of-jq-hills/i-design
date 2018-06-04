@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-design/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-design is a beautiful and flexible theme with several premium features including fullscreen slider, portfolio, testimonial, team members, etc. This highly customizable theme is ideal for startup business websites, portfolios, personal websites or blogging. Highly responsive nature of i-design makes it suitable for large desktop screens to small mobile screens. Some of the features are unlimited color, boxed/wide layout, custom background, custom css styling, social links, multiple blog layout, etc. i-design comes with the plugin “templatesnext toolkit” giving you extra flexibility and functionality which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc. Unlike other themes i-design does not use theme settings to store content and you can switch theme without losing content. i-design is WooCommerce ready.
-Version: 1.2.2
+Version: 1.2.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -1023,9 +1023,6 @@ img.wp-smiley,
 .site-header .trans-logo {
 	display: none;
 }
-
-
-
 
 /**
  * 6.2 Navigation
@@ -6144,6 +6141,88 @@ nav.navigation .nav-links a:visited {
 .no-ubar .utilitybar {
 	display: none;
 }
+
+
+/* Customizer CSS ends */
+
+.nx-preloader .nx-ispload {
+	-webkit-animation: tx-hide-preload 2.0s forwards;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-delay: 10s;
+	animation: tx-hide-preload 2.0s forwards;
+	animation-iteration-count: 1;
+	animation-delay: 10s;
+}
+@-webkit-keyframes tx-hide-preload {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: auto;
+	height: 0px;
+  }
+}
+@keyframes tx-hide-preload {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: auto;
+	height: 0px;
+  }
+}
+
+.tx-nopad .hentry,
+.elementor-page .hentry {
+    padding: 0px;
+}
+
+.tx-nopad .entry-header,
+.elementor-page .entry-header {
+	margin-bottom: 0px;
+}
+.tx-nopad .site-main,
+.elementor-page .site-main {
+    padding-top: 0px;
+	padding-bottom: 0px;
+}
+.tx-nopad .entry-meta,
+.elementor-page .entry-meta {
+	margin: 0px;
+}
+
+/* SiteOrign Page Builder Templates */
+.nx-pb .hentry {
+    padding: 0px;
+}
+.nx-pb .entry-header {
+	margin-bottom: 0px;
+}
+.nx-pb .site-main {
+    padding-top: 0px;
+	padding-bottom: 0px;
+}
+.nx-pb .entry-meta {
+	margin: 0px;
+}
+
+/* SiteOrign Page Builder Templates */
+.nx-brizy .hentry {
+    padding: 0px;
+}
+.nx-brizy .entry-header {
+	margin-bottom: 0px;
+}
+.nx-brizy .site-main {
+    padding-top: 0px;
+	padding-bottom: 0px;
+}
+.nx-brizy .entry-meta {
+	margin: 0px;
+}
+
 
 .entry-content a.elementor-button,
 .entry-content a.elementor-button:visited {

@@ -51,7 +51,7 @@ function welcome_screen_content() {
 	/* Urls */
 	$reviewURL = esc_url('//wordpress.org/support/theme/i-design/reviews/?filter=5');
 	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/');
-	$videoguide = esc_url('//www.templatesnext.org/icreate/video-tutorials/');
+	$videoguide = esc_url('//www.templatesnext.org/i-design-documentation/');
 	$supportforum = esc_url('//templatesnext.org/ispirit/landing/forums/'); 
 	$toolkit = esc_url('//www.templatesnext.org/icreate/templatesnext-toolkit/');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
@@ -99,7 +99,7 @@ function welcome_screen_content() {
                 	<div class="one-four-col">
                     	<a href="<?php echo $videoguide; ?>" target="_blank">
                             <div class="nx-dash"><span class="dashicons dashicons-video-alt2"></span></div>
-                            <h3 class="tx-admin-link"><?php _e( 'Video Guide', 'i-design' ); ?></h3>
+                            <h3 class="tx-admin-link"><?php _e( 'Documentation', 'i-design' ); ?></h3>
                         </a>
                     </div>
                 	<div class="one-four-col">
@@ -145,25 +145,101 @@ function welcome_screen_content() {
 				?> 
                 	<div class="nx-tab-content">
                 		<p>&nbsp;</p>
-                        <ol>
-							<?php
+                        <ul class="nx-welcome">
+  							<?php
 									echo '<li>';
-									_e( 'Install Plugins', 'i-design' );
-									printf( __( 'To install and activate all the recommended plugin at once, go to menu "Appearance" > "<a href="%sthemes.php?page=tgmpa-install-plugins">Install Plugins</a>".', 'i-design' ), admin_url() );
+									echo '<h3>';
+									printf( esc_html__( 'Upload Logos', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Start with uploading your logos', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=title_tagline" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Set Theme Color', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Change theme color', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=colors" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Email And Phone', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Add your phone and email or empty the fields to remove them', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=basic" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Add Social Media Links', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Add social media links or empty the fields to remove the icons', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=social" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Turn ON/OFF Preloader', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Turn on or off page preloader, by default it is on', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=basic" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Activate The Slider', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Activate theme slider on default home page', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=blogpage" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Edit Slider', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Adjust slider settings, edit slides, etc.', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[panel]=slider" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Set Fonts', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'Choose your fonts', 'i-design' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=typography" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
 									echo '</li>';
 									
 									echo '<li>';
-									_e( 'One Click Demo Setup', 'i-design' );
-									printf( __( 'i-design comes with "<a href="%sthemes.php?page=pt-one-click-demo-import">One Click Demo Setup</a>", You can import and setup copy of any of our demo website in one click.', 'i-design' ), admin_url() );
-									echo '</li>';
-									
-									echo '<li>';
-									_e( 'Start Customizing', 'i-design' );
-									printf( __( 'To start setting up your theme go to menu "Appearance" > "<a href="%scustomize.php">Customize</a>".', 'i-design' ), admin_url() );
-									echo '</li>';								
-                            ?>                    
-                        </ol>
-                        <span style="font-size: 13px;"><?php _e( 'Page Builder Tutorials : ', 'i-design' ); ?><a href="<?php echo $pb_tutorial; ?>" target="_blank"><?php echo $pb_tutorial; ?></a></span>
+									echo '<h3>';
+									printf( esc_html__( 'Choose Your Plugins', 'i-design' ));
+									echo '</h3>';
+									printf( esc_html__( 'I-DESIGN supports most of the popular plugins. We have listed some of the most popular plugins with high ratings. ', 'i-design' ) );
+									printf( esc_html__( 'It is not neccssery to install and activate all the plugins recommendded. ', 'i-design' ) );
+									printf( esc_html__( 'You need the correct set of plugins suiteable for your job.', 'i-design' ) );																		
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%sthemes.php?page=welcome-screen-about&tab=idesign_plugins" target="_blank">Customizer Option</a>', 'i-design' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';									
+                            ?>
+                        </ul>                                                                        
         			</div>
 				<?php		
 					} elseif ( $active_tab == 'idesign_plugins' )

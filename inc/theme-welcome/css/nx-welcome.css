@@ -145,5 +145,41 @@
 	padding-top: 6px; 
 	font-size: 15px; 
 	color: #555;
-}				
+}
+
+ul.nx-welcome,
+ul.nx-welcome li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+ul.nx-welcome {
+}
+ul.nx-welcome li {
+	border: 1px solid #ccc;
+	margin-bottom: 12px;
+	background-color: #FFFFFF!important;
+	display: block;
+	padding: 2px 16px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+ul.nx-welcome li h3 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #373737;
+	margin-bottom: 0px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+ul.nx-welcome li .nx-customizer-link {
+	margin-top: 8px;
+	font-weight: 600;
+}
 		
