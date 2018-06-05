@@ -5004,11 +5004,13 @@ nav.navigation .nav-links a:visited {
 	display: none;
 }
 
+.nx-vi-header .site .iheader,
 .home.home-slider-off .site .iheader {
 	position: relative;
 	overflow: hidden;	
 }
 
+.nx-vi-header .site .iheader .imagebg,
 .home.home-slider-off .site .iheader .imagebg {
 	display: block;
 	position: absolute;
@@ -5021,6 +5023,7 @@ nav.navigation .nav-links a:visited {
 	top: 0px;
 }
 
+.nx-vi-header .site .iheader:after,
 .home.home-slider-off .site .iheader:after {
 	display: block;
 	position: absolute;
@@ -5035,6 +5038,7 @@ nav.navigation .nav-links a:visited {
 	background-position: 0px 0px;
 }
 
+.nx-vi-header .site .iheader .titlebar,
 .home.home-slider-off .site .iheader .titlebar {
 	position: relative;
 	display: block;
@@ -5045,11 +5049,13 @@ nav.navigation .nav-links a:visited {
 	text-align: center;	
 }
 
+.nx-vi-header .site .iheader .titlebar-o h1,
 .home.home-slider-off .site .iheader .titlebar-o h1 {
 	position: absolute;
 	bottom: 0px;
 }
 
+.nx-vi-header .site .iheader .titlebar h1,
 .home.home-slider-off .site .iheader .titlebar h1 {
 	position: relative;
 	text-transform: uppercase;
@@ -5176,6 +5182,7 @@ nav.navigation .nav-links a:visited {
 }
 
 @media (max-width: 999px) {
+	.nx-vi-header .site .iheader .titlebar h1,
 	.home.home-slider-off .site .iheader .titlebar h1 {
 		text-transform: uppercase;
 		font-size: 48px;
@@ -5185,7 +5192,8 @@ nav.navigation .nav-links a:visited {
 }
 
 @media (max-width: 767px) {
-	.home.home-slider-off .site .iheader .titlebar h1 {
+	.nx-vi-header .site .iheader .titlebar h1,
+	.home.home-slider-off .site .iheader .titlebar h1	 {
 		font-size: 24px;
 		line-height: 24px;
 		font-weight: 400;

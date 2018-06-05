@@ -91,6 +91,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
+				'desc'  => __( 'Only appears on titlebar when plugin Breadcrumb NavXT is active.', 'i-design' )
 			),
 			
 			// 3rd part slider
@@ -100,7 +101,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 				// Field ID, i.e. the meta key
 				'id'    => "{$prefix}other_slider",
 				// Field description (optional)
-				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. Only works with TemplatesNext Themes ', 'i-design' ),
+				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. Only works with TemplatesNext Themes.', 'i-design' ),
 				'type'  => 'textarea',
 				// Default value (optional)
 				'std'   => '',
@@ -169,7 +170,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 		'id' => 'miscellaneous',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Miscellaneous Meta', 'i-design' ),
+		'title' => __( 'Opther Page Options', 'i-design' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'post', 'page', 'portfolio', 'team', 'product' ),

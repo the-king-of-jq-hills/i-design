@@ -313,7 +313,7 @@ jQuery(document).ready(function($) {
 	if( $('.nx-trans-header').length > 0 )
 	{
 		$('body').addClass('nx-fullscreen');
-		$(".iheader").css("display", "none");
+		//$(".iheader").css("display", "none");
 	}
 	
 	if($(".home").length > 0)
@@ -376,7 +376,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	// Video slider
-	if ( $('.home').length > 0 && $('.home-slider-off').length > 0 )
+	if ( ( $('.home').length > 0 && $('.home-slider-off').length > 0 ) || ( $('.nx-vi-header').length > 0 ) )
 	{
 		//console.log("it should be : "+(((winheight)/100)*header_height));
 		var header_height = $('.iheader').data('header-height');
@@ -391,7 +391,18 @@ jQuery(document).ready(function($) {
 		if( video_id ) {
 			$(".video-foreground").append(embed_code);
 		}				
+	} else if ( $('.blog').length > 0 && $('.home-slider-off').length > 0 )
+	{
+		$('.iheader').css( "height", 180);
+		$('.titlebar').css( "paddingTop", 88);
+		
 	}
+	
+	if ( $('.nx-titlebar').length > 0 && $('.nx-fullscreen').length > 0 )
+	{
+		$('.iheader').css( "height", 180);
+		$('.titlebar').css( "paddingTop", 88);		
+	}	
 	
 	$(window).load(function(){	
 		// hide the preloader

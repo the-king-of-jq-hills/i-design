@@ -183,22 +183,22 @@ if ( function_exists( 'rwmb_meta' ) ) {
 		
 		$hide_title = $header_type = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = "";
 		if ( function_exists( 'rwmb_meta' ) ) {
-			$hide_title = rwmb_meta('iamaze_hidetitle');
+			$hide_title = rwmb_meta('idesign_hidetitle');
 			$header_type = rwmb_meta('idesign_header_type');
 			$show_slider = rwmb_meta('idesign_show_slider');
 			$other_slider = rwmb_meta('idesign_other_slider');
 			$custom_title = rwmb_meta('idesign_customtitle');
 			$hide_breadcrumb = rwmb_meta('idesign_hide_breadcrumb');
 		}
-		
+		/*
 		if( $hide_title == 1 ){
 			$header_type = 0;
 		}
 		
-		if( $hide_title == 1 ){
+		if( $show_slider == 1 ){
 			$header_type = 3;
 		}		
-
+		*/
 		$hide_front_slider = get_theme_mod('slider_stat', 1);
 		$other_front_slider = get_theme_mod('blogslide_scode', '');
 		$itrans_slogan = esc_attr(get_theme_mod('banner_text', get_bloginfo( 'description' )));
@@ -258,7 +258,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
         <?php 
 		elseif( $header_type != '0' ) : 
 		?>
-        <div class="iheader" style="">
+        <div class="iheader nx-titlebar">
         	<div class="titlebar">
             	
                 <?php

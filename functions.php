@@ -497,7 +497,7 @@ function idesign_body_class( $classes ) {
 		$idesign_no_ubar = rwmb_meta('idesign_no_ubar');
 		$show_trans_header = rwmb_meta('idesign_trans_header');		
 		//$hide_title = rwmb_meta('idesign_hidetitle');
-		$header_type = rwmb_meta('iamaze_header_type');			
+		$header_type = rwmb_meta('idesign_header_type');			
 	}
 		
 	if ( ! is_multi_author() )
