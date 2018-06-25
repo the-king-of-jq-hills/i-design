@@ -656,6 +656,14 @@ include get_template_directory() . '/inc/nx-custom-style.php';
 include get_template_directory() . '/inc/woo-functions.php';
 
 /*-----------------------------------------------------------------------------------*/
+/*	Maintanance mode on
+/*-----------------------------------------------------------------------------------*/ 
+$mmode_status = get_theme_mod('mmode_status', 0);
+if($mmode_status == 1) {
+	include get_template_directory() . '/inc/m-mode/m-mode.php';
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*	changing default Excerpt length 
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -824,31 +832,33 @@ function idesign_register_required_plugins() {
 
 }
 
-/*
-add_action('admin_notices', 'idesign_admin_notice_005');
-function idesign_admin_notice_005() {
+
+add_action('admin_notices', 'idesign_admin_notice_006');
+function idesign_admin_notice_006() {
     global $current_user ;
         $user_id = $current_user->ID;
 		$demo_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
+		$about_url = admin_url('themes.php?page=welcome-screen-about');		
 		$notice_url = esc_url('https://wordpress.org/support/theme/i-design/reviews/?filter=5');
         // Check that the user hasn't already clicked to ignore the message 
-    if ( ! get_user_meta($user_id, 'idesign_ignore_notice_005') ) {
+    if ( ! get_user_meta($user_id, 'idesign_ignore_notice_006') ) {
         echo '<div class="updated idesign-notice"><p><div style="line-height: 20px;">'; 
-			//printf(__('Welcome to "<b>TemplatesNext\'s i-design</b>", Kickstart your website from <a href="%1$s">i-design demo</a> and edit everything instead of creating content from scratch.<br />', 'i-design'), $demo_import_url);
-        	printf(__('<div style="font-size: 16px;"><b>We need your help! If you like i-Design, you can help us by leaving a 5-stars review!</b></div>', 'i-design'));
+			printf(__('<div style="font-size: 16px;">I-DESIGN 1.2.6 has got major update in page options/settings to provide flexibility to Static Front Page or Landing Pages.</div> <div style="font-size: 16px;">For pre-built wide layouts, use page templates "TX Full Width".</div>', 'i-design'), $demo_import_url);
+        	//printf(__('<div style="font-size: 16px;"><b>We need your help! If you like i-Design, you can help us by leaving a 5-stars review!</b></div>', 'i-design'));
+			printf(__('<a href="%1$s" target="_blank" class="ad-review">About I-AMAZE</a>', 'i-design' ), $about_url);	
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">Post Your Review</a>', 'i-design' ), $notice_url);							
-			printf(__('<a href="%1$s" class="tx-dismiss">Remind Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_005=0');				
+			printf(__('<a href="%1$s" class="tx-dismiss">Remind Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_006=0');				
         echo "</div></p></div>";
     }
 }
 
-add_action('admin_init', 'idesign_notice_ignore_005');
-function idesign_notice_ignore_005() {
+add_action('admin_init', 'idesign_notice_ignore_006');
+function idesign_notice_ignore_006() {
     global $current_user;
 	$user_id = $current_user->ID;
     // If user clicks to ignore the notice, add that to their user meta 
-	if ( isset($_GET['idesign_notice_ignore_005']) && '0' == $_GET['idesign_notice_ignore_005'] ) {
-    	add_user_meta($user_id, 'idesign_ignore_notice_005', 'true', true);
+	if ( isset($_GET['idesign_notice_ignore_006']) && '0' == $_GET['idesign_notice_ignore_006'] ) {
+    	add_user_meta($user_id, 'idesign_ignore_notice_006', 'true', true);
     }
 }
-*/
+/**/

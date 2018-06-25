@@ -65,7 +65,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 			),
 			*/
 			array(
-				'name'            => __( 'Titlebar/Image Header Type', 'i-design' ),
+				'name'            => __( 'Titlebar/Image Header/Slider Type', 'i-design' ),
 				'id'              => "{$prefix}header_type",
 				'type'            => 'select',
 				'std'  			  => '1',

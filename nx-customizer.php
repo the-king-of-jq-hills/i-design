@@ -215,7 +215,13 @@ function idesign_add_panels_and_sections( $wp_customize ) {
         'title'    => __('WooCommerce Theme Options', 'i-design'),
         'description' => '',
         'priority' => 191,
-    ));		
+    ));	
+	
+    $wp_customize->add_section('mmode', array(
+        'title'    => __('Coming Soon/Maintenance Mode', 'i-craft'),
+        'description' => __('', 'i-craft'),
+        'priority' => 192,
+    ));			
 }
 
 
@@ -987,7 +993,87 @@ function idesign_custom_setting( $controls ) {
 		'default'  	  => 0,		
 		'priority'    => 1,
 	);	
+
+	/* Maintenance Mode */
+	$controls[] = array(
+		'type'        => 'switch',
+		'settings'     => 'mmode_status',
+		'label'       => __( 'Turn ON Maintenance Mode', 'i-craft' ),
+		'description' => esc_attr__( 'Logged in admins will view a normal site.', 'i-craft' ),
+		'section'     => 'mmode',
+		'default'  	  => 0,		
+		'priority'    => 1,
+	);	
+
+	$controls[] = array(
+		'label' => esc_attr__( 'Title', 'i-craft'),
+		'description' => __('Maintanance mode/coming soon title', 'i-craft'),
+		'settings' => 'mmode_title',
+		'default' => esc_attr__( 'Under Maintenance', 'i-craft' ),
+		'class' => '',
+		'type' => 'text',
+        'section'  => 'mmode',
+		'priority'    => 2,		
+	);
+
+	$controls[] = array(
+		'label' => esc_attr__( 'Description', 'i-craft'),
+		'description' => __('Maintanance mode/coming soon description', 'i-craft'),
+		'settings' => 'mmode_desc',
+		'default' => esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-craft' ),
+		'class' => '',
+		'type' => 'textarea',
+        'section'  => 'mmode',
+		'priority'    => 3,					
+	);
 	
+	$controls[] = array(
+		'type'        => 'background',
+		'settings'    => 'mmode_bg',
+		'label'       => esc_attr__( 'Background', 'i-craft' ),
+		'description' => esc_attr__( 'Background image and color', 'i-craft' ),
+		'section'     => 'mmode',
+		'default'     => array(
+			'background-color'      => 'rgba(20,20,20,.8)',
+			'background-image'      => get_template_directory_uri() . '/images/bg-7.jpg',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'scroll',
+		),
+		'priority'    => 4,		
+	);	
+	
+	$controls[] = array(
+	  'type'        => 'date',
+	  'settings'    => 'mmode_days',
+	  'label'       => esc_html__( 'Date', 'i-craft' ),
+	  'description' => __( 'Estimated maintanance until', 'i-craft' ),
+	  'section'     => 'mmode',
+	  /*
+	  'default'     => 12,
+	  
+	  'choices'     => array(
+		'min'  => '0',
+		'max'  => '100',
+		'step' => '1',
+	  ),
+	  */	  
+	);
+	$controls[] = array(
+	  'type'        => 'slider',
+	  'settings'    => 'mmode_hours',
+	  'label'       => esc_html__( 'Hours', 'i-craft' ),
+	  'description' => __( 'Estimated hours add to days', 'i-craft' ),
+	  'section'     => 'mmode',
+	  'default'     => 16,
+	  'choices'     => array(
+		'min'  => '0',
+		'max'  => '24',
+		'step' => '1',
+	  ),	  
+	);	
+		
 	// promos
 	$controls[] = array(
 		'type'        => 'custom',

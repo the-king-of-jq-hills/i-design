@@ -285,20 +285,15 @@ if ( function_exists( 'rwmb_meta' ) ) {
 							echo '</h1>';
 						}						
 					}
-
-            	?>
-				<?php 
-				
-                    if(function_exists('bcn_display') && !$hide_breadcrumb )
-                    {
-				?>
-                	<div class="nx-breadcrumb">
-                <?php
-                        bcn_display();
-				?>
-                	</div>
-                <?php		
-                    } 
+                    if(function_exists('bctx_display') && !$hide_breadcrumb ) {
+                		echo '<div class="nx-breadcrumb">';
+							bctx_display(); 
+						echo '</div>';
+                    } elseif(function_exists('bcn_display') && !$hide_breadcrumb ) {
+                		echo '<div class="nx-breadcrumb">';
+							bcn_display();
+						echo '</div>';
+                    }
                 ?>               
             <div class="clear"></div>	
             </div>

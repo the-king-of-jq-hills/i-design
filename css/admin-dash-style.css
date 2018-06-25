@@ -111,3 +111,14 @@
 	text-decoration: none;
 	color: #9d0000;	
 }
+
+body.wp-admin:not(.index-php) .idesign-notice {
+	display: none;
+}
+
+.wp-admin .updated.mmode-notice {
+	border-left-color: #dd3333;
+	background-color: #dd3333;
+	color: #FFFFFF;
+	padding: 6px 12px;
+}
