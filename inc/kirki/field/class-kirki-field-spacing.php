@@ -30,10 +30,10 @@ class Kirki_Field_Spacing extends Kirki_Field_Dimensions {
 				'right'  => ( isset( $this->default['top'] ) ),
 			),
 			'labels'   => array(
-				'top'    => esc_attr__( 'Top', 'kirki' ),
-				'bottom' => esc_attr__( 'Bottom', 'kirki' ),
-				'left'   => esc_attr__( 'Left', 'kirki' ),
-				'right'  => esc_attr__( 'Right', 'kirki' ),
+				'top'    => esc_attr__( 'Top', 'i-design' ),
+				'bottom' => esc_attr__( 'Bottom', 'i-design' ),
+				'left'   => esc_attr__( 'Left', 'i-design' ),
+				'right'  => esc_attr__( 'Right', 'i-design' ),
 			),
 		);
 

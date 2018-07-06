@@ -46,13 +46,13 @@ class Kirki_Control_Image extends Kirki_Control_Base {
 
 		data.choices.labels = _.isObject( data.choices.labels ) ? data.choices.labels : {};
 		data.choices.labels = _.defaults( data.choices.labels, {
-			select: '<?php esc_attr_e( 'Select image', 'kirki' ); ?>',
-			change: '<?php esc_attr_e( 'Change image', 'kirki' ); ?>',
-			'default': '<?php esc_attr_e( 'Default', 'kirki' ); ?>',
-			remove: '<?php esc_attr_e( 'Remove', 'kirki' ); ?>',
-			placeholder: '<?php esc_attr_e( 'No image selected', 'kirki' ); ?>',
-			frame_title: '<?php esc_attr_e( 'Select image', 'kirki' ); ?>',
-			frame_button: '<?php esc_attr_e( 'Choose image', 'kirki' ); ?>',
+			select: '<?php esc_attr_e( 'Select image', 'i-design' ); ?>',
+			change: '<?php esc_attr_e( 'Change image', 'i-design' ); ?>',
+			'default': '<?php esc_attr_e( 'Default', 'i-design' ); ?>',
+			remove: '<?php esc_attr_e( 'Remove', 'i-design' ); ?>',
+			placeholder: '<?php esc_attr_e( 'No image selected', 'i-design' ); ?>',
+			frame_title: '<?php esc_attr_e( 'Select image', 'i-design' ); ?>',
+			frame_button: '<?php esc_attr_e( 'Choose image', 'i-design' ); ?>',
 		} );
 		#>
 		<label>

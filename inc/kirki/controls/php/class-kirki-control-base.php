@@ -128,14 +128,14 @@ class Kirki_Control_Base extends WP_Customize_Control {
 			'kirkiL10n',
 			array(
 				'isScriptDebug'        => ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ),
-				'noFileSelected'       => esc_attr__( 'No File Selected', 'kirki' ),
-				'remove'               => esc_attr__( 'Remove', 'kirki' ),
-				'default'              => esc_attr__( 'Default', 'kirki' ),
-				'selectFile'           => esc_attr__( 'Select File', 'kirki' ),
-				'standardFonts'        => esc_attr__( 'Standard Fonts', 'kirki' ),
-				'googleFonts'          => esc_attr__( 'Google Fonts', 'kirki' ),
-				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'kirki' ),
-				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'kirki' ),
+				'noFileSelected'       => esc_attr__( 'No File Selected', 'i-design' ),
+				'remove'               => esc_attr__( 'Remove', 'i-design' ),
+				'default'              => esc_attr__( 'Default', 'i-design' ),
+				'selectFile'           => esc_attr__( 'Select File', 'i-design' ),
+				'standardFonts'        => esc_attr__( 'Standard Fonts', 'i-design' ),
+				'googleFonts'          => esc_attr__( 'Google Fonts', 'i-design' ),
+				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'i-design' ),
+				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'i-design' ),
 			)
 		);
 
@@ -143,7 +143,7 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		// Enqueue the style.
 		wp_enqueue_style(
 			'kirki-styles',
-			"{$kirki_url}controls/css/styles{$suffix}.css",
+			"{$kirki_url}controls/css/nx-kirki-styles{$suffix}.css",
 			array(),
 			KIRKI_VERSION
 		);

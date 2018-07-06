@@ -45,6 +45,7 @@ function welcome_screen_content() {
 	include get_template_directory() . '/inc/theme-welcome/tw-functions.php';	
 	
 	$logo_url = get_template_directory_uri() . '/inc/theme-welcome/i-design-welcome.jpg';
+	$page_settings_url = get_template_directory_uri() . '/inc/theme-welcome/images/page-settings.gif';	
 	$img_url = get_template_directory_uri() . '/inc/theme-welcome/images/';
 	$active_tab = 'idesign_about';
 	
@@ -53,7 +54,7 @@ function welcome_screen_content() {
 	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/');
 	$videoguide = esc_url('//www.templatesnext.org/i-design-documentation/');
 	$supportforum = esc_url('//templatesnext.org/ispirit/landing/forums/'); 
-	$toolkit = esc_url('//www.templatesnext.org/icreate/templatesnext-toolkit/');
+	$toolkit = esc_url('//www.templatesnext.org/i-design/?ref=idtw');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
 	$pb_tutorial = esc_url('https://siteorigin.com/page-builder/documentation/');
 
@@ -79,14 +80,14 @@ function welcome_screen_content() {
                 <div class="welcome-logo"><img src="<?php echo $logo_url; ?>" alt="" class="welcome-logo-img" width="" /></div>
                 <div class="nx-info-desc">
                     <p>
-						<?php _e( 'Congratulations! You are about to use one of the most popular and easy to customize WordPress theme.', 'i-design' ); ?>
-                    </p>
-                    <p>
                     	<a class="" href="<?php echo admin_url(); ?>themes.php?page=tgmpa-install-plugins">
                         <?php _e( 'Install Recommended Plugins', 'i-design' ); ?>
                         </a> 
                         <?php _e( 'and <b>Kick start your website in one click</b>, Setup any one of our demo websites and edit/remove/add contents.', 'i-design' ); ?>
 					</p>
+                    <p>
+						<?php _e( 'Create your own static front page, use any pge builder plugin. I-DESIGN page options makes them highly flexible and customizable.', 'i-design' ); ?>
+                    </p>                    
                     <a class="button button-primary button-hero" href="<?php echo $reviewURL; ?>">
                     <?php _e( 'Post Your Review', 'i-design' ); ?>
                     </a>  
@@ -110,8 +111,8 @@ function welcome_screen_content() {
                     </div>
                 	<div class="one-four-col">
                     	<a href="<?php echo $toolkit; ?>" target="_blank">
-                            <div class="nx-dash"><span class="dashicons dashicons-migrate"></span></div>
-                            <h3 class="tx-admin-link"><?php _e( 'TemplatesNext Toolkit', 'i-design' ); ?></h3>
+                            <div class="nx-dash"><span class="dashicons dashicons-welcome-view-site"></span></div>
+                            <h3 class="tx-admin-link"><?php _e( 'Live Demo', 'i-design' ); ?></h3>
                         </a>
                     </div>
                 	<div class="one-four-col">
@@ -239,8 +240,12 @@ function welcome_screen_content() {
 									echo '</div>';								
 									echo '</li>';									
                             ?>
-                        </ul>                                                                        
+                        </ul>                                                                    
         			</div>
+                    <div>
+                    	<h3 style="margin: 16px 0px 6px 0px;"><?php echo esc_attr__('Ideal Page Settings For Page Builders Using Full Width Layout.', 'i-design'); ?></h3>
+                    	<img src="<?php echo $page_settings_url; ?>" alt="" width="100%" height="" />
+                    </div>
 				<?php		
 					} elseif ( $active_tab == 'idesign_plugins' )
 					{

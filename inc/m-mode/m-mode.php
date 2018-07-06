@@ -85,10 +85,10 @@ if ( ! function_exists( 'icraft_maintenance_mode' ) ) {
 		}
 
 		$maintenance_html .= $maintenance_mode_logo;
-		$maintenance_html .= '<h1>'.esc_html(get_theme_mod('mmode_title', esc_attr__( 'Under Maintenance', 'i-craft' ))).'</h1>';
-		$maintenance_html .= '<p>'.esc_html(get_theme_mod('mmode_desc', esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-craft' ))).'</p>';
+		$maintenance_html .= '<h1>'.esc_html(get_theme_mod('mmode_title', esc_attr__( 'Under Maintenance', 'i-design' ))).'</h1>';
+		$maintenance_html .= '<p>'.esc_html(get_theme_mod('mmode_desc', esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-design' ))).'</p>';
 		
-		if( !empty(get_theme_mod('mmode_days')) ) {
+		if( $mmode_date ) {
 			$maintenance_html .= '<div class="mm-clock-wrap"><div class="mm-clock"></div></div>';
 		}
 		
@@ -113,7 +113,7 @@ function icraft_admin_notice_mmode() {
     
 	if ( $mmode_status == 1 ) {
         echo '<div class="updated mmode-notice"><div style="line-height: 20px;">'; 
-		echo esc_html__('Your site is in &quot;Maintanance Mode&quot;. To deactivate the maintanance go to menu &quot;Appearance&quot; &gt; &quot;Customize&quot; &gt; &quot;Coming Soon/Maintenance Mode&quot;.', 'i-craft');
+		echo esc_html__('Your site is in &quot;Maintanance Mode&quot;. To deactivate the maintanance go to menu &quot;Appearance&quot; &gt; &quot;Customize&quot; &gt; &quot;Coming Soon/Maintenance Mode&quot;.', 'i-design');
         echo "</div></div>";
     }
 }

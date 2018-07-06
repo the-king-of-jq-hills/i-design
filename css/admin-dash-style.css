@@ -122,3 +122,77 @@ body.wp-admin:not(.index-php) .idesign-notice {
 	color: #FFFFFF;
 	padding: 6px 12px;
 }
+
+
+.wp-admin .updated.mmode-notice {
+	border-left-color: #dd3333;
+	background-color: #dd3333;
+	color: #FFFFFF;
+	padding: 6px 12px;
+}
+
+.rwmb-input .rwmb-switch-label {
+	background-color: #999;
+}
+
+.rwmb-meta-box .rwmb-heading-wrapper {
+	background-color: #dddddd;
+}
+
+.rwmb-meta-box {
+	padding-top: 14px;
+}
+.rwmb-meta-box .rwmb-heading-wrapper h4 {
+	font-weight: 600;
+	font-size: 15px;
+	padding: 8px 12px;
+	margin: 0px;
+	line-height: 1;
+}
+
+#postbox-container-2.postbox-container .postbox button.handlediv span.toggle-indicator:before {
+	color: #FFF;
+}
+
+#postbox-container-2.postbox-container .postbox h2.hndle {
+	background-color: #008ec2;
+	color: #FFFFFF;
+}
+
+/* Coming soon section */
+#accordion-section-mmode > h3.accordion-section-title  {
+	background-color: #777777;
+	color: #FFF;
+}
+
+#accordion-section-mmode > h3.accordion-section-title:hover,
+#accordion-section-mmode > h3.accordion-section-title:focus {
+	background-color: #333!important;
+	color: #FFF!important;	
+}
+
+#accordion-section-mmode:hover > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-mmode > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+.nx-ss-pro {
+	display: block;
+	clear: both;
+	font-size: 13px;
+	background-color: #dddddd;
+	color: #333;
+	padding: 6px 12px;
+}
+
+.nx-ss-pro a,
+.nx-ss-pro a:visited {
+	text-decoration: none;
+}
+
+.nx-ss-pro a:hover {
+	text-decoration: underline;
+}

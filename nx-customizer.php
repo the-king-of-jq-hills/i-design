@@ -218,8 +218,8 @@ function idesign_add_panels_and_sections( $wp_customize ) {
     ));	
 	
     $wp_customize->add_section('mmode', array(
-        'title'    => __('Coming Soon/Maintenance Mode', 'i-craft'),
-        'description' => __('', 'i-craft'),
+        'title'    => __('Coming Soon/Maintenance Mode', 'i-design'),
+        'description' => __('', 'i-design'),
         'priority' => 192,
     ));			
 }
@@ -264,7 +264,7 @@ function idesign_custom_setting( $controls ) {
 		'description' => __( 'Transparent logo for the fullscreen slider or dark background. Width 280px, height 72px max.', 'i-design' ),
         'section'  => 'title_tagline',
 		'default'     => '',		
-		'priority'    => 5,
+		'priority'    => 8,
 	);
 	
 	$controls[] = array(
@@ -998,18 +998,18 @@ function idesign_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'mmode_status',
-		'label'       => __( 'Turn ON Maintenance Mode', 'i-craft' ),
-		'description' => esc_attr__( 'Logged in admins will view a normal site.', 'i-craft' ),
+		'label'       => __( 'Turn ON Maintenance Mode', 'i-design' ),
+		'description' => esc_attr__( 'Logged in admins will view a normal site.', 'i-design' ),
 		'section'     => 'mmode',
 		'default'  	  => 0,		
 		'priority'    => 1,
 	);	
 
 	$controls[] = array(
-		'label' => esc_attr__( 'Title', 'i-craft'),
-		'description' => __('Maintanance mode/coming soon title', 'i-craft'),
+		'label' => esc_attr__( 'Title', 'i-design'),
+		'description' => __('Maintanance mode/coming soon title', 'i-design'),
 		'settings' => 'mmode_title',
-		'default' => esc_attr__( 'Under Maintenance', 'i-craft' ),
+		'default' => esc_attr__( 'Under Maintenance', 'i-design' ),
 		'class' => '',
 		'type' => 'text',
         'section'  => 'mmode',
@@ -1017,10 +1017,10 @@ function idesign_custom_setting( $controls ) {
 	);
 
 	$controls[] = array(
-		'label' => esc_attr__( 'Description', 'i-craft'),
-		'description' => __('Maintanance mode/coming soon description', 'i-craft'),
+		'label' => esc_attr__( 'Description', 'i-design'),
+		'description' => __('Maintanance mode/coming soon description', 'i-design'),
 		'settings' => 'mmode_desc',
-		'default' => esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-craft' ),
+		'default' => esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-design' ),
 		'class' => '',
 		'type' => 'textarea',
         'section'  => 'mmode',
@@ -1030,8 +1030,8 @@ function idesign_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'background',
 		'settings'    => 'mmode_bg',
-		'label'       => esc_attr__( 'Background', 'i-craft' ),
-		'description' => esc_attr__( 'Background image and color', 'i-craft' ),
+		'label'       => esc_attr__( 'Background', 'i-design' ),
+		'description' => esc_attr__( 'Background image and color', 'i-design' ),
 		'section'     => 'mmode',
 		'default'     => array(
 			'background-color'      => 'rgba(20,20,20,.8)',
@@ -1047,8 +1047,8 @@ function idesign_custom_setting( $controls ) {
 	$controls[] = array(
 	  'type'        => 'date',
 	  'settings'    => 'mmode_days',
-	  'label'       => esc_html__( 'Date', 'i-craft' ),
-	  'description' => __( 'Estimated maintanance until', 'i-craft' ),
+	  'label'       => esc_html__( 'Date', 'i-design' ),
+	  'description' => __( 'Estimated maintanance until', 'i-design' ),
 	  'section'     => 'mmode',
 	  /*
 	  'default'     => 12,
@@ -1063,8 +1063,8 @@ function idesign_custom_setting( $controls ) {
 	$controls[] = array(
 	  'type'        => 'slider',
 	  'settings'    => 'mmode_hours',
-	  'label'       => esc_html__( 'Hours', 'i-craft' ),
-	  'description' => __( 'Estimated hours add to days', 'i-craft' ),
+	  'label'       => esc_html__( 'Hours', 'i-design' ),
+	  'description' => __( 'Estimated hours add to days', 'i-design' ),
 	  'section'     => 'mmode',
 	  'default'     => 16,
 	  'choices'     => array(

@@ -204,6 +204,7 @@ li.customize-control {
 	color: #FFF!important;	
 }
 
+#customize-control-custom_logo,
 #customize-control-logo-trans {
 	background-image: url("../images/logo-bg.png");
 	background-position: center;

@@ -21,14 +21,6 @@ $tx_plugins = array (
 			'pluginfile' => 'tx-toolkit.php',
     ),
 	array(
-            'name' => __( 'Breadcrumb NavXT (<span class="nx-red">Recommended</span>)', 'i-design' ),
-            'desc' => __( 'This plugin adds the “Breadcrumbs” trail for your users to help them navigate and find their location in your site.', 'i-design' ),
-			'pluginurl' => esc_url( 'https://wordpress.org/plugins/breadcrumb-navxt/' ),
-			'title' => 'Breadcrumb NavXT',			
-			'slug' => 'breadcrumb-navxt',
-			'pluginfile' => 'breadcrumb-navxt.php',			
-    ),
-	array(
             'name' => __( 'Contact Form 7 (<span class="nx-red">Recommended</span>)', 'i-design' ),
             'desc' => __( 'A form creating plugin to help you create your own contact form or other kinds of forms.', 'i-design' ),
 			'pluginurl' => esc_url( 'https://wordpress.org/plugins/contact-form-7/' ),

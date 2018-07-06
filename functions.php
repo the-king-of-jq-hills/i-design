@@ -750,13 +750,6 @@ function idesign_register_required_plugins() {
 * If the source is NOT from the .org repo, then source is also required.
 */
     $plugins = array(
-
-         // This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name' => 'Breadcrumb NavXT', // The plugin name.
-            'slug' => 'breadcrumb-navxt', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
          // This is an example of how to include a plugin from a private repo in your theme.
         array(
             'name' => 'TemplatesNext ToolKit', // The plugin name.

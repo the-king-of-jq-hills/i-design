@@ -181,7 +181,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
         <!-- #Banner -->
         <?php
 		
-		$hide_title = $header_type = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = "";
+		$hide_title = $header_type = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = $smart_slider_3 = "";
 		if ( function_exists( 'rwmb_meta' ) ) {
 			$hide_title = rwmb_meta('idesign_hidetitle');
 			$header_type = rwmb_meta('idesign_header_type');
@@ -189,6 +189,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
 			$other_slider = rwmb_meta('idesign_other_slider');
 			$custom_title = rwmb_meta('idesign_customtitle');
 			$hide_breadcrumb = rwmb_meta('idesign_hide_breadcrumb');
+			$smart_slider_3 = rwmb_meta('idesign_smart_slider');				
 		}
 		/*
 		if( $hide_title == 1 ){
@@ -206,6 +207,10 @@ if ( function_exists( 'rwmb_meta' ) ) {
 		
 		$other_slider = esc_html($other_slider);
 		$other_front_slider = esc_html($other_front_slider);
+		
+		if( $smart_slider_3 ) {
+			$other_slider = '[smartslider3 slider='.$smart_slider_3.']';
+		}		
 		
 		if($other_slider) :
 		?>

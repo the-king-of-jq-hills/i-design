@@ -58,7 +58,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Titlebar/Image Header Type', 'i-amaze' ),
 				'id'   => "{$prefix}hidetitle",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'hide-ttl',
@@ -67,7 +67,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 			array(
 				'name'            => __( 'Titlebar/Image Header/Slider Type', 'i-design' ),
 				'id'              => "{$prefix}header_type",
-				'type'            => 'select',
+				'type'            => 'button_group',
 				'std'  			  => '1',
 				'options'         => array(
 					'1'     => __( 'Normal Page Title Bar', 'i-design' ),
@@ -88,10 +88,12 @@ function idesign_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Hide breadcrumb', 'i-design' ),
 				'id'   => "{$prefix}hide_breadcrumb",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
-				'desc'  => __( 'Only appears on titlebar when plugin Breadcrumb NavXT is active.', 'i-design' )
+				'desc'  => __( 'Only appears on titlebar when plugin Breadcrumb NavXT is active.', 'i-design' ),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),					
 			),
 			
 			// 3rd part slider
@@ -108,8 +110,24 @@ function idesign_register_meta_boxes( $meta_boxes )
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
 				//'clone' => true,
 				'class' => 'cust-ttl',
+				
 			),			
 			
+			array(
+				'name'            => __( 'Smart Slider 3', 'i-design' ),
+				'id'              => "{$prefix}smart_slider",
+				'type'            => 'select',
+				// Array of 'value' => 'Label' pairs
+				'options'         => icraft_smartslider_list(),
+				// Allow to select multiple value?
+				'multiple'        => false,
+				// Placeholder text
+				'placeholder'     => __( 'Select a smart slider', 'i-design' ),
+				// Display "Select All / None" button?
+				'select_all_none' => false,
+				'desc' 			  => __('This option will override all the above slider options', 'i-design'),
+				'after'			  => icraft_smartslider_after(),
+			),				
 
 		)
 	);
@@ -191,7 +209,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Show Alternate Main Navigation', 'i-design' ),
 				'id'   => "{$prefix}alt_navigation",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Turn on the alternate main navigation', 'i-design'),
@@ -202,47 +220,57 @@ function idesign_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Remove Top and Bottom Padding/Margin', 'i-design' ),
 				'id'   => "{$prefix}page_nopad",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Remove the spaces/padding from top and bottom of the page/post', 'i-design'),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),					
 			),
 			// Hide page header
 			array(
 				'name' => __( 'Show Transparent Header', 'i-design' ),
 				'id'   => "{$prefix}trans_header",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Show transparent header on pages/posts. This will hide the page/post titlebar as well', 'i-design'),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),						
 			),			
 			// Hide page header
 			array(
 				'name' => __( 'Hide Page Header', 'i-design' ),
 				'id'   => "{$prefix}no_page_header",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('In case you are building the page without the top navigation and logo', 'i-design'),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),					
 			),
 			
 			// Hide page header
 			array(
 				'name' => __( 'Hide Top Utilitybar', 'i-design' ),
 				'id'   => "{$prefix}no_ubar",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Hide top bar with email and social links', 'i-design'),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),					
 			),
 			// Hide page header
 			array(
 				'name' => __( 'Hide Footer Widget Area', 'i-design' ),
 				'id'   => "{$prefix}no_footer",
-				'type' => 'checkbox',
+				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Hide bottom footer widget area', 'i-design'),
+				'on_label'  => esc_attr__('Yes', 'i-design'),
+				'off_label' => esc_attr__('No', 'i-design'),					
 			),														
 
 			// Custom page primary color			
@@ -308,3 +336,40 @@ function idesign_register_meta_boxes( $meta_boxes )
 		return $category_list;
 	}	
 
+	function icraft_smartslider_list () {
+		
+		global $wpdb;
+		$smartslider = array();
+		//$smartslider[0] = 'Select a slider';
+		
+		if(class_exists('SmartSlider3')) {
+			$get_sliders = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'nextend2_smartslider3_sliders');
+			if($get_sliders) {
+				foreach($get_sliders as $slider) {
+					$smartslider[$slider->id] = $slider->title;
+				}
+			}
+		}
+		return $smartslider;
+	
+	}
+	
+	function icraft_smartslider_after () {
+		
+		$smartslider_html = '';
+		
+		$smartslider_html .= '<div class="nx-ss-pro">';
+		$smartslider_html .= esc_attr__('&quot;Smart Slider 3&quot; can be downloaded from ', 'i-design');
+		$smartslider_html .= '<a href="'.esc_url('//wordpress.org/plugins/smart-slider-3/').'" target="_blank">';
+		$smartslider_html .= esc_attr__('WordPress repository', 'i-design');
+		$smartslider_html .= '</a>. ';
+		$smartslider_html .= esc_attr__('Professionally designed ', 'i-design');
+		$smartslider_html .= '<a href="'.esc_url('//smartslider3.com/sample-sliders/?source=templatesnext').'" target="_blank">';
+		$smartslider_html .= esc_attr__('slider library', 'i-design');
+		$smartslider_html .= '</a> ';
+		$smartslider_html .= esc_attr__('available with Smart Slider 3.', 'i-design');
+		$smartslider_html .= '</div>';
+		
+		return $smartslider_html;
+	
+	}	
