@@ -104,3 +104,39 @@ menu, ol, ul {
 	direction: rtl;
 	text-align: right;
 }
+
+
+.nav-container .sub-menu, 
+.nav-container .children {
+	left: auto;
+	right: 20px;
+}
+
+.nav-container .sub-menu ul, 
+.nav-container .children ul {
+	background-color: #FFF;
+	right: auto;
+	left: -240px;
+}
+
+
+#ibanner .nxs-design18 .nx-slider-container {
+	direction: rtl;
+}
+#ibanner .nxs-design18 .nx-slider-container,
+#ibanner .nxs-design18 .da-slider .owl-item,
+#ibanner .nxs-design18 .da-slider .owl-item p {
+	text-align: right;
+}
+
+#ibanner .nxs-design18 .da-slider .owl-item p {
+	padding-right: 0px;
+}
+
+.site-footer .copyright {
+	text-align: right;
+}
+
+.site-footer .credit-info {
+	text-align: left;
+}

@@ -756,6 +756,7 @@ function idesign_register_required_plugins() {
             'slug' => 'templatesnext-toolkit', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),
+		/*
          // This is an example of how to include a plugin from a private repo in your theme.
         array(
             'name' => 'Contact Form 7', // The plugin name.
@@ -780,7 +781,7 @@ function idesign_register_required_plugins() {
             'slug' => 'so-widgets-bundle', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),				
-		/**/
+		*/
     );
 
     /**
@@ -836,7 +837,7 @@ function idesign_admin_notice_006() {
         // Check that the user hasn't already clicked to ignore the message 
     if ( ! get_user_meta($user_id, 'idesign_ignore_notice_006') ) {
         echo '<div class="updated idesign-notice"><p><div style="line-height: 20px;">'; 
-			printf(__('<div style="font-size: 16px;">I-DESIGN 1.2.6 has got major update in page options/settings to provide flexibility to Static Front Page or Landing Pages.</div> <div style="font-size: 16px;">For pre-built wide layouts, use page templates "TX Full Width".</div>', 'i-design'), $demo_import_url);
+			printf(__('<div style="font-size: 16px;">To activate the features of I-DESIGN, install and activate accompanying plugin “TemplatesNext Toolkit”.</div>', 'i-design'), $demo_import_url);
         	//printf(__('<div style="font-size: 16px;"><b>We need your help! If you like i-Design, you can help us by leaving a 5-stars review!</b></div>', 'i-design'));
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">About I-AMAZE</a>', 'i-design' ), $about_url);	
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">Post Your Review</a>', 'i-design' ), $notice_url);							

@@ -225,6 +225,7 @@ function idesign_add_panels_and_sections( $wp_customize ) {
 }
 
 
+if ( ! function_exists( 'idesign_custom_setting' ) ) :
 function idesign_custom_setting( $controls ) {
 	
     $controls[] = array(
@@ -1096,6 +1097,7 @@ function idesign_custom_setting( $controls ) {
 	
     return $controls;
 }
+endif;
 add_filter( 'kirki/controls', 'idesign_custom_setting' );
 
 

@@ -188,7 +188,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 		'id' => 'miscellaneous',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Opther Page Options', 'i-design' ),
+		'title' => __( 'Other Page Options', 'i-design' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'post', 'page', 'portfolio', 'team', 'product' ),
@@ -359,7 +359,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 		$smartslider_html = '';
 		
 		$smartslider_html .= '<div class="nx-ss-pro">';
-		$smartslider_html .= esc_attr__('&quot;Smart Slider 3&quot; can be downloaded from ', 'i-design');
+		$smartslider_html .= esc_attr__('Download &quot;Smart Slider 3&quot; from ', 'i-design');
 		$smartslider_html .= '<a href="'.esc_url('//wordpress.org/plugins/smart-slider-3/').'" target="_blank">';
 		$smartslider_html .= esc_attr__('WordPress repository', 'i-design');
 		$smartslider_html .= '</a>. ';

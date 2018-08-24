@@ -147,26 +147,26 @@ if ( function_exists( 'rwmb_meta' ) ) {
 							
                         </nav><!-- #site-navigation -->
                         
-						<div class="header-iconwrap">
+						
                         <?php
                         global $woocommerce;
 						$show_cart = get_theme_mod('show_cart', 0);
                         if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && $show_cart == 1 ) {
                         ?>
-                            <div class="header-icons woocart">
+                        <div class="header-iconwrap">
+                        	<div class="header-icons woocart">
                                 <a href="<?php echo wc_get_cart_url(); ?>" >
                                     <span class="show-sidr"><?php _e('Cart','i-design'); ?></span>
                                     <span class="genericon genericon-cart"></span>
                                     <span class="cart-counts"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
                                 </a>
                                 <?php echo idesign_top_cart(); ?>
-                             </div>
+                            </div>
+                        </div>
                         <?php	
                         }
-                        ?>
-                        </div>
-                        
-                        <?php if( $show_search == 1 ) { ?>
+						
+						if( $show_search == 1 ) { ?>
                         <div class="topsearch">
                             <?php get_search_form(); ?>
                         </div>

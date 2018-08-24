@@ -3,8 +3,8 @@ Theme Name: i-design
 Theme URI: http://www.templatesnext.org/i-design/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
-Description: i-design is a beautiful and flexible theme with several premium features including fullscreen slider, portfolio, testimonial, team members, etc. This highly customizable theme is ideal for startup business websites, portfolios, personal websites or blogging. Highly responsive nature of i-design makes it suitable for large desktop screens to small mobile screens. Some of the features are unlimited color, boxed/wide layout, custom background, custom css styling, social links, multiple blog layout, etc. i-design comes with the plugin “templatesnext toolkit” giving you extra flexibility and functionality which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc. Unlike other themes i-design does not use theme settings to store content and you can switch theme without losing content. i-design is WooCommerce ready.
-Version: 1.2.7
+Description: I-DESIGN is an extremely flexible theme having several premium features, even more than top selling premium themes. All the premium features are free and will remain free. It can be used as blog, personal website, portfolio, business website or WooCommerce website. I-DESIGN can be used with any page builder. Supports RTL.
+Version: 1.2.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, news, blog, two-columns, rtl-language-support, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
@@ -6231,8 +6231,37 @@ nav.navigation .nav-links a:visited {
 	margin: 0px;
 }
 
-
 .entry-content a.elementor-button,
 .entry-content a.elementor-button:visited {
 	color: #ffffff;
+}
+
+/*
+Menu item highlight style
+*/
+.nav-container .tx-highlight {
+	position: relative;
+	z-index: 30005;	
+}
+
+.nav-container .tx-highlight a {
+	color:  #FFF;
+	position: relative;
+	z-index: 30015;		
+}
+
+.nav-container .tx-highlight a:hover {
+	border-bottom: 0px solid #FFF;
+	color: #FFF!important;
+}
+
+.nav-container .tx-highlight:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 32px;
+	left: 0px;
+	top: calc( 50% - 16px );
+	z-index: 30000;	
 }
