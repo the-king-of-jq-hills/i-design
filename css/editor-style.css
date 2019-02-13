@@ -576,3 +576,8 @@ html .mceContentBody.rtl {
 	background: none;
 	content: none;
 }
+
+body[data-id^="widget-sow-hero-"], 
+body[data-id*=" widget-sow-hero-"] {
+	background-color: #bbbbbb;
+}

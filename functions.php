@@ -756,32 +756,6 @@ function idesign_register_required_plugins() {
             'slug' => 'templatesnext-toolkit', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),
-		/*
-         // This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name' => 'Contact Form 7', // The plugin name.
-            'slug' => 'contact-form-7', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
-         // This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name' => 'One Click Demo Import', // The plugin name.
-            'slug' => 'one-click-demo-import', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
-        
-        array(
-            'name' => 'SiteOrigin PageBuilder ', // The plugin name.
-            'slug' => 'siteorigin-panels', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
-         // This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name' => 'SiteOrigin Widgets Bundle', // The plugin name.
-            'slug' => 'so-widgets-bundle', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),				
-		*/
     );
 
     /**
@@ -827,32 +801,32 @@ function idesign_register_required_plugins() {
 }
 
 
-add_action('admin_notices', 'idesign_admin_notice_006');
-function idesign_admin_notice_006() {
+add_action('admin_notices', 'idesign_admin_notice_008');
+function idesign_admin_notice_008() {
     global $current_user ;
         $user_id = $current_user->ID;
 		$demo_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
 		$about_url = admin_url('themes.php?page=welcome-screen-about');		
 		$notice_url = esc_url('https://wordpress.org/support/theme/i-design/reviews/?filter=5');
         // Check that the user hasn't already clicked to ignore the message 
-    if ( ! get_user_meta($user_id, 'idesign_ignore_notice_006') ) {
+    if ( ! get_user_meta($user_id, 'idesign_ignore_notice_008') ) {
         echo '<div class="updated idesign-notice"><p><div style="line-height: 20px;">'; 
-			printf(__('<div style="font-size: 16px;">To activate the features of I-DESIGN, install and activate accompanying plugin “TemplatesNext Toolkit”.</div>', 'i-design'), $demo_import_url);
+			printf(__('<div style="font-size: 16px;">Welcome to I-DESIGN! To know more about I-DESIGN and its features please go to <a href="%1$s">about page<a/>.</div>', 'i-design'), $about_url);
         	//printf(__('<div style="font-size: 16px;"><b>We need your help! If you like i-Design, you can help us by leaving a 5-stars review!</b></div>', 'i-design'));
-			printf(__('<a href="%1$s" target="_blank" class="ad-review">About I-AMAZE</a>', 'i-design' ), $about_url);	
+			printf(__('<a href="%1$s" target="_blank" class="ad-review">Start Setting Up I-DESIGN</a>', 'i-design' ), $about_url);	
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">Post Your Review</a>', 'i-design' ), $notice_url);							
-			printf(__('<a href="%1$s" class="tx-dismiss">Remind Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_006=0');				
+			printf(__('<a href="%1$s" class="tx-dismiss">Remind Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_008=0');				
         echo "</div></p></div>";
     }
 }
 
-add_action('admin_init', 'idesign_notice_ignore_006');
-function idesign_notice_ignore_006() {
+add_action('admin_init', 'idesign_notice_ignore_008');
+function idesign_notice_ignore_008() {
     global $current_user;
 	$user_id = $current_user->ID;
     // If user clicks to ignore the notice, add that to their user meta 
-	if ( isset($_GET['idesign_notice_ignore_006']) && '0' == $_GET['idesign_notice_ignore_006'] ) {
-    	add_user_meta($user_id, 'idesign_ignore_notice_006', 'true', true);
+	if ( isset($_GET['idesign_notice_ignore_008']) && '0' == $_GET['idesign_notice_ignore_008'] ) {
+    	add_user_meta($user_id, 'idesign_ignore_notice_008', 'true', true);
     }
 }
 /**/

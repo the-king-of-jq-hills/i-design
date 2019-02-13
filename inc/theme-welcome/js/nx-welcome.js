@@ -229,6 +229,22 @@ jQuery(document).ready(function ($) {
 		$('.nx-colorbox').colorbox({
 			width: "80%",
 		});
-	}		
+	}	
+	
+	/********************************
+	I-CRAFT Setup Guide
+	********************************/
+	
+	if( $('#customize-info').length )
+	{
+		var setupGuide = '<div class="tx-setup-guide"><a href="themes.php?page=welcome-screen-about" target="_blank">Setup Guide</a></div>';
+		$( "#customize-info .accordion-section-title" ).append( setupGuide );
+	}
+	
+	if( $('#customize-theme-controls').length )
+	{
+		var txPromo = '<div class="tx-promo-panel"><a href="http://templatesnext.org/ispirit/landing/?ref=idesignc" target="_blank">Go Premium</a></div>';
+		$( "#customize-theme-controls" ).append( txPromo );
+	}	
 	
 });

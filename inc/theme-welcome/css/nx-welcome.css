@@ -232,6 +232,41 @@ ul.nx-welcome li .nx-customizer-link {
 	font-family: dashicons;
 }
 
+.nx-admin-row .col-1-2 {
+	display: block;
+	float: left;
+	width: 46%;
+	margin: 2%;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 48%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+ul.setup-list  {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 42px;
+}
+
+ul.setup-list li {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+
 /* Product compare */
 
 .nx-price-table {
@@ -489,4 +524,54 @@ ul.vd-thumb li img {
 	-webkit-animation-iteration-count:infinite;
 	-webkit-animation-timing-function:ease-in-out;
 	-webkit-animation-direction: alternate;
+}
+
+.tx-setup-guide {
+	display: block;
+	clear: both;
+}
+.tx-setup-guide a,
+.tx-setup-guide a:visited {
+	display: block;
+	clear: both;
+	background: transparent;
+	text-align: center;
+	text-decoration: none;
+	color: #333333;
+	
+	border: 1px solid #999;
+	padding: 6px 12px;
+	border-radius: 3px;
+}
+
+.tx-setup-guide a:hover {
+	color: #333333;
+	box-shadow:   inset 0 0 3px #666;	
+}
+
+.tx-promo-panel a,
+.tx-promo-panel a:visited {
+	display: block;
+	clear: both;
+	line-height: 42px;
+	background-color: #c42766;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 15px;
+	font-size: 14px;
+	margin-bottom: 2px;
+	border-left: 4px solid #FFF;
+}
+.tx-promo-panel a:hover {
+	border-left: 4px solid #0073aa;
+	background-color: #333333;
+	color: #FFF;
+}
+
+.wp-full-overlay.section-open .nx-cstnt,
+.wp-full-overlay.in-sub-panel .nx-cstnt, 
+.wp-full-overlay.section-open .tx-promo-panel,
+.wp-full-overlay.in-sub-panel .tx-promo-panel {
+	display: none;
 }

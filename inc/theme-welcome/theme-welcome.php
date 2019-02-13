@@ -48,16 +48,20 @@ function welcome_screen_content() {
 	$page_settings_url = get_template_directory_uri() . '/inc/theme-welcome/images/static-front-page-settings.png';	
 	$page_settings_url_2 = get_template_directory_uri() . '/inc/theme-welcome/images/page-builder-page-settings.png';		
 	$img_url = get_template_directory_uri() . '/inc/theme-welcome/images/';
+	$ocdi_tab = 'themes.php?page=welcome-screen-about&tab=idesign_ocdi#ocdi-tab';
 	$active_tab = 'idesign_about';
 	
 	/* Urls */
 	$reviewURL = esc_url('//wordpress.org/support/theme/i-design/reviews/?filter=5');
-	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/');
+	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/?ref=idesignw');
 	$videoguide = esc_url('//www.templatesnext.org/i-design-documentation/');
 	$supportforum = esc_url('//templatesnext.org/ispirit/landing/forums/'); 
 	$toolkit = esc_url('//www.templatesnext.org/i-design/?ref=idtw');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
-	$pb_tutorial = esc_url('https://siteorigin.com/page-builder/documentation/');
+	$pb_tutorial = esc_url('//siteorigin.com/page-builder/documentation/');
+	
+	$intro_video_url = esc_url( 'https://www.youtube.com/embed/M_-HUs4EN-8?rel=0&amp;controls=1&amp;showinfo=0&amp;color=white&quot;theme=light' );
+	$intro_video = '<iframe width="100%" src="'. $intro_video_url . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';	
 
 
 	$ocdi_buttont = "";
@@ -107,41 +111,15 @@ function welcome_screen_content() {
                     <p>
 						<?php esc_attr_e( 'These features are free and will remain free. Install plugin &quot;TemplatesNext ToolKit&quot; to activate all the features.', 'i-design' ); ?>
                     </p>
-                    <a class="button button-primary button-hero" href="<?php echo $reviewURL; ?>">
-                    <?php esc_attr_e( 'Post Your Review', 'i-design' ); ?>
+                    
+                    <a class="button button-primary button-hero" target="_blank" href="<?php echo $toolkit; ?>">
+                    <?php esc_attr_e( 'Live Demos', 'i-design' ); ?>
                     </a>  
-                    <a class="button button-primary button-hero" href="<?php echo $goPremiumURL; ?>">
+                    <a class="button button-primary button-hero" target="_blank" href="<?php echo $goPremiumURL; ?>">
                     	<?php esc_attr_e( 'Go Premium', 'i-design' ); ?>
                     </a>  
                 </div>
                 <div class="tx-wspace-24"></div> 
-                <div class="tx-wspace-12"></div>
-                <div class="nx-admin-row">
-                	<div class="one-four-col">
-                    	<a href="<?php echo $videoguide; ?>" target="_blank">
-                            <div class="nx-dash"><span class="dashicons dashicons-video-alt2"></span></div>
-                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Documentation', 'i-design' ); ?></h3>
-                        </a>
-                    </div>
-                	<div class="one-four-col">
-                    	<a href="<?php echo $supportforum; ?>" target="_blank">
-                            <div class="nx-dash"><span class="dashicons dashicons-format-chat"></span></div>
-                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Support Forum', 'i-design' ); ?></h3>
-                        </a>
-                    </div>
-                	<div class="one-four-col">
-                    	<a href="<?php echo $toolkit; ?>" target="_blank">
-                            <div class="nx-dash"><span class="dashicons dashicons-welcome-view-site"></span></div>
-                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Live Demos', 'i-design' ); ?></h3>
-                        </a>
-                    </div>
-                	<div class="one-four-col">
-                    	<a href="<?php echo $fb_page; ?>" target="_blank">
-                            <div class="nx-dash"><span class="dashicons dashicons-facebook-alt"></span></div>
-                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Community', 'i-design' ); ?></h3>
-                        </a>
-                    </div>                                                            
-                </div>
                 <div class="tx-wspace-24"></div>
                 <?php
 					if( isset( $_GET[ 'tab' ] ) ) {
@@ -152,12 +130,14 @@ function welcome_screen_content() {
                     <a href="?page=welcome-screen-about&tab=idesign_about" class="nav-tab <?php echo $active_tab == 'idesign_about' ? 'nav-tab-active' : ''; ?>">
                    		<?php _e( 'Setting Up i-design', 'i-design' ); ?>
                     </a>
+                    <!-- 
+                    <a href="?page=welcome-screen-about&tab=idesign_ocdi" class="nav-tab <?php echo $active_tab == 'idesign_ocdi' ? 'nav-tab-active' : ''; ?> nx-kick">
+                    	<?php _e( 'One Click Demo Import', 'i-design' ); ?>
+                    </a>
+                    -->
                     <a href="?page=welcome-screen-about&tab=idesign_pro" class="nav-tab <?php echo $active_tab == 'idesign_pro' ? 'nav-tab-active' : ''; ?> nx-plug">
                     	<?php _e( 'Go Premium', 'i-design' ); ?>
                     </a>
-                    <a href="?page=welcome-screen-about&tab=idesign_ocdi" class="nav-tab <?php echo $active_tab == 'idesign_ocdi' ? 'nav-tab-active' : ''; ?> nx-kick">
-                    	<?php _e( 'Demo Import', 'i-design' ); ?>
-                    </a>                    
                     <a href="?page=welcome-screen-about&tab=idesign_plugins" class="nav-tab <?php echo $active_tab == 'idesign_plugins' ? 'nav-tab-active' : ''; ?> nx-kick">
                     	<?php _e( 'Useful Plugins', 'i-design' ); ?>
                     </a>
@@ -284,7 +264,7 @@ function welcome_screen_content() {
 				<?php		
 					} elseif ( $active_tab == 'idesign_plugins' ) {
 				?>     
-                	<div class="nx-tab-content"> 
+                	<div class="nx-tab-content" id="ocdi-tab"> 
                 		<p>&nbsp;</p>
                         <p>
                         	<?php esc_attr_e( 'These are the few plugins we love to use and listed for you. Choose the plugin you want. ', 'i-design'); ?>
@@ -521,7 +501,36 @@ function welcome_screen_content() {
 					}
 				?>
   
-                <div class="tx-wspace-24"></div><div class="tx-wspace-24"></div>    
+                <div class="tx-wspace-24"></div>
+                <div class="tx-wspace-24"></div> 
+                
+                <div class="tx-wspace-12"></div>
+                <div class="nx-admin-row">
+                	<div class="one-four-col">
+                    	<a href="<?php echo $videoguide; ?>" target="_blank">
+                            <div class="nx-dash"><span class="dashicons dashicons-video-alt2"></span></div>
+                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Documentation', 'i-design' ); ?></h3>
+                        </a>
+                    </div>
+                	<div class="one-four-col">
+                    	<a href="<?php echo $supportforum; ?>" target="_blank">
+                            <div class="nx-dash"><span class="dashicons dashicons-format-chat"></span></div>
+                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Support Forum', 'i-design' ); ?></h3>
+                        </a>
+                    </div>
+                	<div class="one-four-col">
+                    	<a href="<?php echo $toolkit; ?>" target="_blank">
+                            <div class="nx-dash"><span class="dashicons dashicons-welcome-view-site"></span></div>
+                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Live Demos', 'i-design' ); ?></h3>
+                        </a>
+                    </div>
+                	<div class="one-four-col">
+                    	<a href="<?php echo $fb_page; ?>" target="_blank">
+                            <div class="nx-dash"><span class="dashicons dashicons-facebook-alt"></span></div>
+                            <h3 class="tx-admin-link"><?php esc_attr_e( 'Community', 'i-design' ); ?></h3>
+                        </a>
+                    </div>                                                            
+                </div>                
  	
             </div>
 

@@ -292,7 +292,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 			),			
 			*/
 			/* requires meta-box update  */
-			/*
+			/**/
 			// Custom page logo normal			
 			array(
 				'name'  => __( 'Custom Page Logo Normal', 'i-design' ),
@@ -305,7 +305,7 @@ function idesign_register_meta_boxes( $meta_boxes )
 				'id'    => "{$prefix}page_logo_trans",
 				'type'  => 'single_image',
 			),
-			*/
+			
 						
 			// additional page class			
 			array(
@@ -315,6 +315,14 @@ function idesign_register_meta_boxes( $meta_boxes )
 				'std'   => '',
 				'desc' => __('Enter an additional page class, will be added to body. "hideubar" for top social/contact bar, "boxed" for boxed page for wide layout.', 'i-design'),
 			),
+			// additional page Style			
+			array(
+				'name'  => __( 'Additional Page CSS', 'i-design' ),
+				'id'    => "{$prefix}page_styles",
+				'type'  => 'textarea',
+				'std'   => '',
+				'desc' => __('Enter an additional page CSS Codes, Styles will be applied on this page only.', 'i-design'),
+			),				
 						
 		)
 	);				

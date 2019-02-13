@@ -1076,6 +1076,7 @@ function idesign_custom_setting( $controls ) {
 	);	
 		
 	// promos
+	/*
 	$controls[] = array(
 		'type'        => 'custom',
 		'settings'    => 'custom_demo',
@@ -1094,6 +1095,7 @@ function idesign_custom_setting( $controls ) {
 		</div>',
 		'priority' => 10,
 	);	
+	*/
 	
     return $controls;
 }

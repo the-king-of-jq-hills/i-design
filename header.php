@@ -33,7 +33,7 @@ $no_page_header = 0;
 if ( function_exists( 'rwmb_meta' ) ) { 
 	$no_page_header = rwmb_meta('idesign_no_page_header');
 	
-	/* Requires Meta Box Update
+	/* Requires Meta Box Update*/	
 	if(rwmb_meta( 'idesign_page_logo_normal' ))
 	{
 		$custom_logo_normal = rwmb_meta( 'idesign_page_logo_normal', '' );
@@ -44,7 +44,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
 		$custom_logo_reverse = rwmb_meta( 'idesign_page_logo_trans', '' );
 		$idesign_logo_trans = $custom_logo_reverse['full_url'];
 	}
-	*/	
+	
 }
 
 ?>

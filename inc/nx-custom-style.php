@@ -105,7 +105,7 @@
 
 			echo '.entry-header h1.entry-title a:hover,.entry-header > .entry-meta a:hover {color: '.$primary_color.';}';
 
-			echo '.featured-area div.entry-summary > p > a.moretag:hover {background-color: '.$primary_color.';}';
+			echo '.featured-area div.entry-summary > p > a.moretag:hover, .nav-container .tx-highlight:after {background-color: '.$primary_color.';}';
 
 			echo '.site-content div.entry-thumbnail .stickyonimg,.site-content div.entry-thumbnail .dateonimg,.site-content div.entry-nothumb .stickyonimg,.site-content div.entry-nothumb .dateonimg {background-color: '.$primary_color.';}';
 
@@ -192,20 +192,28 @@
 		add_action('wp_head', 'idesign_custom_styles');
 	}
 	
-	/* CUSTOM JS OUTPUT
-	================================================== 
-	function nx_custom_script() {
+	/* Custom Page CSS
+	================================================== */
+	function idesign_page_styles() {
 		
-		global  $idesign_data;
+		global $post;	
+		$custom_page_style = "";
+			
+		if ( function_exists( 'rwmb_meta' ) ) {
+			$custom_page_style = rwmb_meta('idesign_page_styles');
+		}		
 		
-		$custom_js = $idesign_data['custom_js'];
+		$custom_page_style = wp_filter_nohtml_kses($custom_page_style);
 		
-		if ($custom_js) {			
-			echo "\n<script>\n".$custom_js."\n</script>\n";			
-		}
-	}
+		$custom_page_style = str_replace(array('&gt;','\"'),array('>','"'), $custom_page_style);
 	
-	add_action('wp_footer', 'nx_custom_script');
+		if(!empty($custom_page_style)) :
+			?>
+			<style id="nx_page_styles" type="text/css" >
+				<?php echo $custom_page_style; ?>
+			</style>
+			<?php
+		endif;
 		
-*/
-?>
+	}
+	add_action('wp_head', 'idesign_page_styles');
