@@ -679,6 +679,35 @@ body .tx-ocdi-item-footer .ocdi__ajax-loader.js-ocdi-ajax-loader {
 	bottom: 0px;
 }
 
+.intropop-top {
+	position: relative;
+}
+.howtoimport {
+	display: block;
+	width: 300px;
+	height: 55px;
+	position: absolute;
+	left: 50%;
+	bottom: 48px;
+	background-image: url(../images/howto.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	margin-left: -150px;
+	
+	transition-property: none;
+	transition-duration: 0s;	
+}
+
+.howtoimport:hover {
+	background-position: 0px -55px;	
+}
+
+.ocdi-reqplug .button,
+.nx-ocdi-install .button,
+.nx-tx-activation .button {
+	border: none!important;
+	box-shadow: none!important;
+}
 
 @media only screen and (max-width: 1500px) {
 	.nx-demolist .popdemolist li {

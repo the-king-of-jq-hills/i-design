@@ -12,7 +12,7 @@ function idesign_txoc_admin_js() {
 	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
 		$intropop_content = idesign_customizer_demolist();
 	} else {
-		$intropop_content = idesign_customizer_intropop();
+		$intropop_content = idesign_customizer_intropop() . idesign_customizer_demolist();
 	}
 	
 	wp_localize_script('idesign-txoc-admin-js', 'intropop_content', $intropop_content);
@@ -31,6 +31,7 @@ function idesign_customizer_intropop () {
     global $current_user ;
     $user_id = $current_user->ID;
 	$show_pop_meta = get_user_meta($user_id, 'idesign_txoc_show_pops');
+	$how_to_import = esc_url('https://www.youtube.com/watch?v=wYFFlo93cKU');
 	
 	if ( !empty($show_pop_meta) ){
 		if ( '1' == $show_pop_meta[0] ) {
@@ -43,14 +44,19 @@ function idesign_customizer_intropop () {
 	}
 	
 	$intropop_content .= '<div class="closepop"><a href="#" title="Close"></a></div>';
-	$intropop_content .= '<h1>'. esc_html__('Welcome To I-DESIGN', 'i-design') .'</h1>';
-	$intropop_content .= '<h4>'. esc_html__('Please Install accompanying plugin Templatesnext ToolKit to take full advantage of all the features.', 'i-design') .'</h4>';		
+	$intropop_content .= '<h1>'. esc_html__('Welcome To I-DESIGN Setup', 'i-design') .'</h1>';
+	$intropop_content .= '<h4>'. esc_html__('Installing accompanying plugin Templatesnext ToolKit.', 'i-design') .'</h4>';
+	
+	$intropop_content .= '<a href="'.$how_to_import.'" target="_blank" title="How To Import Demo Layouts" class="howtoimport">';
+	$intropop_content .= '</a>';
+		
 	$intropop_content .= '</div>';
 	$intropop_content .= '<div class="tx-features">';
 	$intropop_content .= '<h1>'. esc_html__('Main Features', 'i-design') .'</h1>';
 	$intropop_content .= '<ul>';
-	$intropop_content .= '<li>'. esc_html__('Ready To Import Sites.', 'i-design') .'</li>';
+	$intropop_content .= '<li>'. esc_html__('Ready To Import Demos.', 'i-design') .'</li>';
 	$intropop_content .= '<li>'. esc_html__('Portfolio, Team, Custom Slider, etc.', 'i-design') .'</li>';
+	$intropop_content .= '<li>'. esc_html__('20+ Custom Shortcodes', 'i-design') .'</li>';	
 	$intropop_content .= '<li>'. esc_html__('Page/Post Meta Options.', 'i-design') .'</li>';
 	$intropop_content .= '<li>'. esc_html__('Wishlist And Products Compare.', 'i-design') .'</li>';	
 	$intropop_content .= '<li>'. esc_html__('And Much More..', 'i-design') .'</li>';					
@@ -74,12 +80,12 @@ function idesign_customizer_intropop () {
 	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
 		$activation_button .= '<a href="#" class="button disabled button-hero">' . __( 'Plugin installed and active', 'i-design' ) . '</a>';  
 	} elseif( idesign_is_plugin_installed($pluginTitle) == false ) {
-		$activation_button .= '<a data-slug="templatesnext-toolkit" data-active-lebel="' . __( 'Installing...', 'i-design' ) . '" class="install-nx-now button button-hero" href="' . esc_url( $nonce_install ) . '" data-name="templatesnext-toolkit" aria-label="Install templatesnext-toolkit">' . __( 'Install and activate', 'i-design' ) . '</a>';
-		$activation_button .= '<a class="button activate-nx-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-design' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit" style="display: none;">' . __( 'Activate', 'i-design' ) . '</a>';
-		$activation_button .= '<a href="#" class="tx-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-design' ) . '</a>';
+		$activation_button .= '<a data-slug="templatesnext-toolkit" data-active-lebel="' . __( 'Installing...', 'i-design' ) . '" class="install-nx-now install-txtk-now button button-hero" href="' . esc_url( $nonce_install ) . '" data-name="templatesnext-toolkit" aria-label="Install templatesnext-toolkit">' . __( 'Install and activate', 'i-design' ) . '</a>';
+		$activation_button .= '<a class="button activate-nx-now activate-txtk-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-design' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit" style="display: none;">' . __( 'Activate', 'i-design' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active txtk-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-design' ) . '</a>';
 	} else {
-		$activation_button .= '<a class="button activate-nx-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-design' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit">' . __( 'Activate', 'i-design' ) . '</a>';
-		$activation_button .= '<a href="#" class="tx-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-design' ) . '</a>';  
+		$activation_button .= '<a class="button activate-nx-now activate-txtk-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-design' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit">' . __( 'Activate', 'i-design' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active txtk-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-design' ) . '</a>';  
 	}
 	$activation_button .= '</div></div></div>';	
 	
@@ -100,19 +106,32 @@ function idesign_customizer_demolist () {
 		
 	$show_pop_meta = get_user_meta($user_id, 'idesign_txoc_show_pops');
 	
-	if ( !empty($show_pop_meta) ){
-		if ( '1' == $show_pop_meta[0] ) {
-			$intropop_content .= '<div class="txoc-stage2 txoc-show">';
-		} elseif ( '0' == $show_pop_meta[0] )	{
+	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
+		if ( !empty($show_pop_meta) ){
+			if ( '1' == $show_pop_meta[0] ) {
+				$intropop_content .= '<div class="txoc-stage2 txoc-show">';
+			} elseif ( '0' == $show_pop_meta[0] )	{
+				$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
+			}
+		} else {
 			$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
-		}
+		}	
 	} else {
-		$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
-	}	
+		if ( !empty($show_pop_meta) ){
+			if ( '1' == $show_pop_meta[0] ) {
+				$intropop_content .= '<div class="txoc-stage2 txoc-show" style="display: none;">';
+			} elseif ( '0' == $show_pop_meta[0] )	{
+				$intropop_content .= '<div class="txoc-stage2 txoc-noshow" style="display: none;">';
+			}
+		} else {
+			$intropop_content .= '<div class="txoc-stage2 txoc-noshow" style="display: none;">';
+		}
+	}
+	
 	
 	$intropop_content .= '<div class="intropop-top demolist-head">';
 	$intropop_content .= '<div class="closepop popstage2"><a href="#" title="Close"></a></div>';
-	$intropop_content .= '<h1>'. esc_html__('Ready to Import Websites', 'i-design') .'</h1>';
+	$intropop_content .= '<h1>'. esc_html__('Ready to Import Demos', 'i-design') .'</h1>';
 	$intropop_content .= '<h4>'. esc_html__('Start With A Pre-designed Website', 'i-design') .'</h4>';
 
 	$intropop_content .= '<ul class="nxl-filter">';
@@ -294,7 +313,7 @@ function idesign_customizer_demolist () {
 	
 	$intropop_content .= '<div class="txoc-sitelink" style="display: none;">';
 	$intropop_content .= '<a href="'.site_url().'/wp-admin/customize.php?idesign_txoc_pops=0" class="button" target="_self" >'. esc_html__( 'Customize', 'i-design' ) .'</a>';
-	$intropop_content .= '<a href="'.site_url().'" class="button button-primary" target="_blank" >'. esc_html__( 'Visit Site', 'i-design' ) .'</a>';
+	$intropop_content .= '<a href="'.site_url().'/?idesign_txoc_pops=0" class="button button-primary" target="_blank" >'. esc_html__( 'Visit Site', 'i-design' ) .'</a>';
 	$intropop_content .= '</div>';
 	
 	
@@ -436,7 +455,27 @@ function idesign_ocdi_required_plugins() {
 				'slug' => 'woocommerce',
 				'pluginfile' => 'woocommerce.php',
 				'ocdi' => 1,			
-		),					
+		),		
+		array(
+				'name' => __( 'Loco Translate (<span class="nx-red">Optional</span>)', 'i-design' ),
+				'desc' => __( 'Theme translation plugin.', 'i-design' ),
+				'pluginurl' => esc_url( 'https://wordpress.org/plugins/loco-translate/' ),
+				'title' => 'Loco Translate',			
+				'slug' => 'loco-translate',
+				'pluginfile' => 'loco.php',
+				'ocdi'      => 1,
+				'repourl'	=> '',					
+		),
+		array(
+				'name' => __( 'Polylang (<span class="nx-red">Optional</span>)', 'i-design' ),
+				'desc' => __( 'Multilingual plugin', 'i-design' ),
+				'pluginurl' => esc_url( 'https://wordpress.org/plugins/polylang/' ),
+				'title' => 'Polylang',			
+				'slug' => 'polylang',
+				'pluginfile' => 'polylang.php',
+				'ocdi'      => 1,
+				'repourl'	=> '',					
+		),						
 		
 	);
 }

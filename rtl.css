@@ -43,6 +43,15 @@ input, select, textarea {
 	float: right;
 }
 
+.headerwrap .headerinnerwrap > span#site-titlendesc {
+    display: block;
+    float: right;
+}
+
+.headerwrap .site-header:not(.fixeddiv) .headerinnerwrap > span#site-titlendesc {
+	padding-right: 32px;
+}
+
 .navbar {
 	float: left;
 	direction: rtl;

@@ -233,7 +233,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'top_phone',
         'label'    => __( 'Phone Number', 'i-design' ),
         'section'  => 'basic',
-        'default'  => '1-000-123-4567',
+        'default'  => '00112345678',
         'priority' => 1,
 		'description' => __( 'Phone number that appears on top bar.', 'i-design' ),
     );
@@ -253,7 +253,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'top_email',
         'label'    => __( 'Email Address', 'i-design' ),
         'section'  => 'basic',
-        'default'  => 'email@example.com',
+        'default'  => 'example@example.com',
         'priority' => 1,
 		'description' => __( 'Email Id that appears on top bar.', 'i-design' ),		
     );
@@ -276,7 +276,22 @@ function idesign_custom_setting( $controls ) {
 		'section'     => 'basic',
 		'default'     => 1,
 		'priority'    => 3,
-	);				
+	);
+	
+	$controls[] = array(
+		'type'        => 'radio-buttonset',
+		'settings'     => 'show_polylang',
+		'label'       => __( 'Show Polylang Language Switch', 'i-design' ),
+		'description' => __( 'Show multilingual plugin polylang language switch on top bar.', 'i-design' ),
+		'section'     => 'basic',
+		'choices'     => array(
+							'0' => esc_html__( 'Off', 'i-design' ),
+							'1' => esc_html__( 'On with Flags', 'i-design' ),
+							'2' => esc_html__( 'On With Names', 'i-design' ),
+		),		
+		'default'     => '2',
+		'priority'    => 4,
+	);					
 	
 	$controls[] = array(
 		'type'        => 'color',
@@ -329,7 +344,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_facebook',
         'label'    => __( 'Facebook', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => esc_url('https://www.facebook.com/templatesnext'),
         'priority' => 1,
     );	
 	
@@ -338,7 +353,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_twitter',
         'label'    => __( 'Twitter', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => esc_url('https://www.twitter.com/templatesnext'),
         'priority' => 1,
     );
 	
@@ -347,7 +362,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_flickr',
         'label'    => __( 'Flickr', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => '',
         'priority' => 1,
     );	
 	
@@ -356,7 +371,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_feed',
         'label'    => __( 'RSS', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => '',
         'priority' => 1,
     );	
 	
@@ -365,7 +380,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_instagram',
         'label'    => __( 'Instagram', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => esc_url('https://www.instagram.com/templatesnext'),
         'priority' => 1,
     );	
 	
@@ -374,7 +389,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_googleplus',
         'label'    => __( 'Google Plus', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => '',
         'priority' => 1,
     );	
 	
@@ -383,7 +398,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_youtube',
         'label'    => __( 'YouTube', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => esc_url('https://www.youtube.com/templatesnext'),
         'priority' => 1,
     );
 	
@@ -392,7 +407,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_pinterest',
         'label'    => __( 'Pinterest', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => '',
         'priority' => 1,
     );	
 	
@@ -401,7 +416,7 @@ function idesign_custom_setting( $controls ) {
         'settings'  => 'itrans_social_linkedin',
         'label'    => __( 'Linkedin', 'i-design' ),
         'section'  => 'social',
-        'default'  => '#',
+        'default'  => '',
         'priority' => 1,
     );	
 	

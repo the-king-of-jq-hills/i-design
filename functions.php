@@ -808,14 +808,25 @@ function idesign_admin_notice_008() {
 		$demo_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
 		$about_url = admin_url('themes.php?page=welcome-screen-about');		
 		$notice_url = esc_url('https://wordpress.org/support/theme/i-design/reviews/?filter=5');
+		
+		$demo_url = esc_url('//www.templatesnext.org/i-design/?ref=idtw#tx-demos');
+		$video_url = esc_url('https://www.youtube.com/watch?v=wYFFlo93cKU');
+		$import_url = esc_url('customize.php?idesign_txoc_pops=1');						
+		
         // Check that the user hasn't already clicked to ignore the message 
     if ( ! get_user_meta($user_id, 'idesign_ignore_notice_008') ) {
         echo '<div class="updated idesign-notice"><p><div style="line-height: 20px;">'; 
-			printf(__('<div style="font-size: 16px;">Welcome to I-DESIGN! To know more about I-DESIGN and its features please go to <a href="%1$s">about page<a/>.</div>', 'i-design'), $about_url);
+			printf(__('<div style="font-size: 18px; line-height: 32px;">Welcome to I-DESIGN, one of the most flexible theme with Multilingual and RTL support! </div><div style="font-size: 16px;">To know more about I-DESIGN and its features please go to <a href="%1$s">about page<a/>.</div>', 'i-design'), $about_url);
         	//printf(__('<div style="font-size: 16px;"><b>We need your help! If you like i-Design, you can help us by leaving a 5-stars review!</b></div>', 'i-design'));
+
+			printf(__('<a href="%1$s" class="txoc-import txadslarge txocwiz">Run Demo Setup Wizard</a>', 'i-design' ), $import_url);
+			printf(__('<a href="%1$s" target="_blank" class="txoc-import txadslarge">Live Demos</a>', 'i-design' ), $demo_url);	
+
+			printf('<div class="clear"></div>');
+			//printf(__('<a href="%1$s" target="_blank" class="ad-review">How To Import Demos</a>', 'i-design' ), $video_url);
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">Start Setting Up I-DESIGN</a>', 'i-design' ), $about_url);	
 			printf(__('<a href="%1$s" target="_blank" class="ad-review">Post Your Review</a>', 'i-design' ), $notice_url);							
-			printf(__('<a href="%1$s" class="tx-dismiss">Remind Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_008=0');				
+			printf(__('<a href="%1$s" class="tx-dismiss">Remind Me Later</a><div class="clear"></div>', 'i-design' ), '?idesign_notice_ignore_008=0');				
         echo "</div></p></div>";
     }
 }

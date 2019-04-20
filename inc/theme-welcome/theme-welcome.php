@@ -56,9 +56,11 @@ function welcome_screen_content() {
 	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/?ref=idesignw');
 	$videoguide = esc_url('//www.templatesnext.org/i-design-documentation/');
 	$supportforum = esc_url('//templatesnext.org/ispirit/landing/forums/'); 
-	$toolkit = esc_url('//www.templatesnext.org/i-design/?ref=idtw');
+	$toolkit = esc_url('//www.templatesnext.org/i-design/?ref=idtw#tx-demos');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
 	$pb_tutorial = esc_url('//siteorigin.com/page-builder/documentation/');
+	
+	$demo_import = esc_url('customize.php');		
 	
 	$intro_video_url = esc_url( 'https://www.youtube.com/embed/M_-HUs4EN-8?rel=0&amp;controls=1&amp;showinfo=0&amp;color=white&quot;theme=light' );
 	$intro_video = '<iframe width="100%" src="'. $intro_video_url . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';	
@@ -111,10 +113,10 @@ function welcome_screen_content() {
                     <p>
 						<?php esc_attr_e( 'These features are free and will remain free. Install plugin &quot;TemplatesNext ToolKit&quot; to activate all the features.', 'i-design' ); ?>
                     </p>
-                    
+
                     <a class="button button-primary button-hero" target="_blank" href="<?php echo $toolkit; ?>">
                     <?php esc_attr_e( 'Live Demos', 'i-design' ); ?>
-                    </a>  
+                    </a>                    
                     <a class="button button-primary button-hero" target="_blank" href="<?php echo $goPremiumURL; ?>">
                     	<?php esc_attr_e( 'Go Premium', 'i-design' ); ?>
                     </a>  

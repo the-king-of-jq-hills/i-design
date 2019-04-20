@@ -14,7 +14,7 @@ $top_phone = '';
 $top_email = '';
 $video_id = '';
 
-$top_phone = esc_attr(get_theme_mod('top_phone', '032216554'));
+$top_phone = esc_attr(get_theme_mod('top_phone', '00112345678'));
 $top_email = sanitize_email(get_theme_mod('top_email', 'example@example.com'));
 $show_search = get_theme_mod('show_search', 1);
 
@@ -88,12 +88,17 @@ if ( function_exists( 'rwmb_meta' ) ) {
                 </div>
                 <?php endif; ?>
                 
-                <?php if ( !empty($top_email) ) : ?>
+				<?php if ( !empty($top_email) ) : ?>
                 <div class="topphone top_email">
                     <i class="topbarico genericon genericon-mail"></i>
                     <?php echo $top_email; ?>
                 </div>
-                <?php endif; ?>                
+                <?php endif; ?> 
+                
+                <?php if ( function_exists('pll_the_languages') ) : ?>
+               	<?php echo idesign_polylang_switcher(); ?>
+                <?php endif; ?>
+                                              
             </div> 
         </div>
         <?php endif; ?>

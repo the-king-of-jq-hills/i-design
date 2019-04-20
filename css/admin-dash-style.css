@@ -62,36 +62,38 @@
 .wp-admin .wrap .idesign-notice {
 	display: none;
 }
-.wp-admin.index-php .wrap .idesign-notice {
+.wp-admin.index-php .wrap .idesign-notice,
+.wp-admin.appearance_page_welcome-screen-about .idesign-notice {
 	display: block!important;
 	background-image: url(../images/notice-bg.png);
 	background-repeat: repeat;
 	background-position: left center;
 }
 
-.wrap .idesign-notice {
+.wp-admin .idesign-notice {
 	background-color: #e57e26;
 	color: #FFF;
 	font-size: 14px;
 	font-weight: 400;
 	border-left: 4px solid #783700;
-	border-left: 4px solid #e57e26;	
+	border-left: 4px solid #e57e26;
+	margin-top: 16px;
 }
 
-.wrap .idesign-notice a,
-.wrap .idesign-notice a:visited {
+.wp-admin .idesign-notice a,
+.wp-admin .idesign-notice a:visited {
 	color: #FFF;
 	text-decoration: underline;
 }
 
-.wrap .idesign-notice a:hover {
+.wp-admin .idesign-notice a:hover {
 	text-decoration: none;
 }
 
-.wrap .idesign-notice .ad-review,
-.wrap .idesign-notice .ad-review:visited,
-.wrap .idesign-notice .tx-dismiss,
-.wrap .idesign-notice .tx-dismiss:visited {
+.wp-admin .idesign-notice .ad-review,
+.wp-admin .idesign-notice .ad-review:visited,
+.wp-admin .idesign-notice .tx-dismiss,
+.wp-admin .idesign-notice .tx-dismiss:visited {
 	display: inline-block;
 	padding: 4px 12px;
 	background-color: #f4e2d3;
@@ -105,8 +107,8 @@
 	font-weight: 600;
 }
 
-.wrap .idesign-notice .ad-review:hover,
-.wrap .idesign-notice .tx-dismiss:hover {
+.wp-admin .idesign-notice .ad-review:hover,
+.wp-admin .idesign-notice .tx-dismiss:hover {
 	background-color: #FFF;
 	text-decoration: none;
 	color: #9d0000;	
@@ -196,3 +198,57 @@ body.wp-admin:not(.index-php) .idesign-notice {
 .nx-ss-pro a:hover {
 	text-decoration: underline;
 }
+
+.idesign-notice .txoc-import.txadslarge,
+.idesign-notice .txoc-import.txadslarge:visited {
+	padding: 10px 36px;
+	height: auto;
+	line-height: 1.4285714;
+	white-space: normal;
+	background: #ac5700;
+	border: 1px solid #814100;
+	border-bottom-width: 3px;
+	box-shadow: 0 2px 0 #c66400;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 -1px 1px #7d3f00,1px 0 1px #7d3f00,0 1px 1px #7d3f00,-1px 0 1px #7d3f00;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	margin-top: 16px;
+	margin-right: 12px;
+}
+
+.idesign-notice .txoc-import.txadslarge:hover {
+	background: #bc5f00;
+}
+
+.idesign-notice .txoc-import.txadslarge1,
+.idesign-notice .txoc-import.txadslarge1:visited {
+	padding: 10px 36px;
+	height: auto;
+	line-height: 1.4285714;
+	white-space: normal;
+	background: #f4e2d3;
+	border: 1px solid #d86400;
+	border-bottom-width: 2px;
+	box-shadow: 0 2px 0 #d86400;
+	color: #9a4700;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	margin-top: 16px;
+	margin-right: 12px;
+}
+
+.idesign-notice .txoc-import.txadslarge1:hover {
+	background: #faf0e8;
+}
+

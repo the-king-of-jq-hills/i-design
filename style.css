@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-design/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: I-DESIGN is an extremely flexible theme having several premium features, even more than top selling premium themes. All the premium features are free and will remain free. It can be used as blog, personal website, portfolio, business website or WooCommerce website. I-DESIGN can be used with any page builder. Supports RTL.
-Version: 1.3.8
+Version: 1.4.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, news, blog, two-columns, rtl-language-support, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
@@ -4419,7 +4419,6 @@ nav.navigation .nav-links a:visited {
 
 @media (max-width: 999px) {
 
-
 	#ft-post article {
 		display: block;
 		float: left;
@@ -6264,4 +6263,81 @@ Menu item highlight style
 	left: 0px;
 	top: calc( 50% - 16px );
 	z-index: 30000;	
+}
+
+/* Polylang Start */
+
+.utilitybar .tb-right.tb-polylang {
+	display: inline-block;
+	float: right;
+}
+
+.utilitybar .tb-right.tb-polylang ul,
+.utilitybar .tb-right.tb-polylang ul li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.utilitybar .tb-right.tb-polylang ul li {
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	margin: 4px 0px;
+}
+
+.utilitybar .tb-right.tb-polylang ul li a {
+	display: block;
+	border-right: 1px solid rgba(255,255,255, 0.32);
+	color: #FFFFFF;
+	padding: 0px 16px;
+	font-size: 12px;
+	text-decoration: none;	
+}
+
+.utilitybar .tb-right.tb-polylang ul li a:hover {
+	text-decoration: underline;
+}
+
+
+.utilitybar .tb-right.tb-polylang ul li:last-child a {
+	border-right: none;
+}	
+
+@media (max-width: 1069px) {
+	.utilitybar {
+		display: block;
+		clear: both;
+		height: auto;
+	}
+	.ubarinnerwrap {
+		display: block;
+		float: none;
+		clear: both;
+	}
+	.ubarinnerwrap:after,
+	.ubarinnerwrap .top_email:after,
+	.utilitybar .socialicons:after {
+		display: block;
+		clear: both;
+		content: " ";
+		height: 0px;
+	}	
+	
+	.utilitybar .socialicons,
+	.utilitybar .tb-right.tb-polylang {
+		display: block;
+		clear: both;
+		float: none;	
+	}
+	
+	.utilitybar .tb-right.tb-polylang ul li:first-child a {
+		padding-left: 0px;
+	}
+	.utilitybar .tb-right.tb-polylang ul li:last-child a {
+		padding-right: 0px;
+	}
+	.screen-reader-text.skip-link {
+		display: none;
+	}
 }
